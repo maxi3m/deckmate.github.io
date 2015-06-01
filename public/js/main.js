@@ -32,7 +32,7 @@ $(document).ready(function() {
 		var roles = $('#roles').val();
 		var blurb = $('#blurb').val();
 		var year = $('#year').val();
-		var terms = $('input[name=terms]:checked', '#apply').val()
+		var terms = $('input[name=terms]:checked', '#intern_form').val()
 		
 		if ((firstname !== "") && (lastname !== "") && (email !== "") && (github !== "") && (resume !== "") && (blurb !== "") && (year !== "") && (terms === "yes") && ((feed !== "") && (validateEmail(email)))) {
 		    $j.ajax({

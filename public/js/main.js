@@ -24,14 +24,14 @@ $(document).ready(function() {
 	}
 	
 	function postFormToGoogle(){
-		var name = $j('#firstname').val();
-		var name = $j('#lastname').val();
-		var email = $j('#email').val();
-		var github = $j('#github').val();
-		var resume = $j('#resume').val();
-		var roles = $j('#roles').val();
-		var blurb = $j('#blurb').val();
-		var year = $j('#year').val();
+		var name = $('#firstname').val();
+		var name = $('#lastname').val();
+		var email = $('#email').val();
+		var github = $('#github').val();
+		var resume = $('#resume').val();
+		var roles = $('#roles').val();
+		var blurb = $('#blurb').val();
+		var year = $('#year').val();
 		var terms = $('input[name=terms]:checked', '#apply').val()
 		
 		if ((firstname !== "") && (lastname !== "") && (email !== "") && (github !== "") && (resume !== "") && (blurb !== "") && (year !== "") && (terms === "yes") && ((feed !== "") && (validateEmail(email)))) {

@@ -80,6 +80,7 @@ $(document).ready(function() {
 		}
 		else {
 		    //Error message
+		    console.log("Please make sure you have filled out all required inputs before submitting")
 		}
 	}
 	

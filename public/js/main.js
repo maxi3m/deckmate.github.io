@@ -82,8 +82,11 @@ $(document).ready(function() {
 		    //Error message
 		}
 	}
-
-
+	
+	$('#intern_form').submit(function() {
+            postFormToGoogle();
+            return false;
+        });
 
 	// Display modal on click
 	$(".learn-more.modal-trigger").click(function(event) {

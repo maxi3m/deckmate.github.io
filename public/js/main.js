@@ -24,8 +24,8 @@ $(document).ready(function() {
 	}
 	
 	function postFormToGoogle(){
-		var name = $('#firstname').val();
-		var name = $('#lastname').val();
+		var firstname = $('#firstname').val();
+		var lastname = $('#lastname').val();
 		var email = $('#email').val();
 		var github = $('#github').val();
 		var resume = $('#resume').val();
@@ -36,16 +36,16 @@ $(document).ready(function() {
 		
 		if ((firstname !== "") && (lastname !== "") && (email !== "") && (github !== "") && (resume !== "") && (blurb !== "") && (year !== "") && (terms === "yes") && ((feed !== "") && (validateEmail(email)))) {
 		    $j.ajax({
-		        url: "https://docs.google.com/a/deckmate.github.io/forms/d/1NoC9QFAj_T0OZaR9dQEnddp-xzQ0OGo58627dgnM-y4/formResponse",
+		        url: "https://docs.google.com/forms/d/1NoC9QFAj_T0OZaR9dQEnddp-xzQ0OGo58627dgnM-y4/formResponse",
 		        data: {
-		        	"entry_735980176" : firstname, 
-		        	"entry_1855865340" : lastname, 
-		        	"entry_568150418" : email,
-		        	"entry_1922611629" : github,
-		        	"entry_670080863" : resume,
-		        	"entry_452937369" : blurb,
-		        	"entry_645095933" : roles,
-		        	"entry_905553991" : year,
+		        	"entry.735980176" : firstname, 
+		        	"entry.1855865340" : lastname, 
+		        	"entry.568150418" : email,
+		        	"entry.1922611629" : github,
+		        	"entry.670080863" : resume,
+		        	"entry.452937369" : blurb,
+		        	"entry.645095933" : roles,
+		        	"entry.905553991" : year,
 		        	
 		        },
 		        type: "POST",

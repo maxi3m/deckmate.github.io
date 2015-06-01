@@ -34,7 +34,7 @@ $(document).ready(function() {
 		var year = $('#year').val();
 		var terms = $('input[name=terms]:checked', '#intern_form').val()
 		
-		if ((firstname !== "") && (lastname !== "") && (email !== "") && (github !== "") && (resume !== "") && (blurb !== "") && (year !== "") && (terms === "yes") && ((feed !== "") && (validateEmail(email)))) {
+		if ((firstname !== "") && (lastname !== "") && (email !== "") && (github !== "") && (resume !== "") && (blurb !== "") && (year !== "") && (terms === "yes") && (validateEmail(email) ) {
 		    $j.ajax({
 		        url: "https://docs.google.com/forms/d/1NoC9QFAj_T0OZaR9dQEnddp-xzQ0OGo58627dgnM-y4/formResponse",
 		        data: {

@@ -36,8 +36,17 @@ $(document).ready(function() {
 		
 		if ((firstname !== "") && (lastname !== "") && (email !== "") && (github !== "") && (resume !== "") && (blurb !== "") && (year !== "") && (terms === "yes") && ((feed !== "") && (validateEmail(email)))) {
 		    $j.ajax({
-		        url: "https://docs.google.com/yourFormURL/formResponse",
-		        data: {"entry.1" : name, "entry.3" : email, "entry.4": feed},
+		        url: "https://docs.google.com/a/deckmate.github.io/forms/d/15QFO2VE44-9gAwcJeTPPWvxAX7v_1Ye9qmjdX2VzLBw/formResponse",
+		        data: {
+		        	"entry_735980176" : firstname, 
+		        	"entry_1855865340" : lastname, 
+		        	"entry_568150418" : email,
+		        	"entry_568150418" : email,
+		        	"entry_568150418" : email,
+		        	"entry_568150418" : email,
+		        	"entry_568150418" : email,
+		        	
+		        },
 		        type: "POST",
 		        dataType: "xml",
 		        statusCode: {

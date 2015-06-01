@@ -6,20 +6,89 @@ $(document).ready(function() {
 		$(".nav-links").slideToggle(300);
 	});
 
+	// Display Signup modal on click
+	$(".modal-signup-trigger").click(function() {
+		event.preventDefault();
+	    $(".modal-signup").fadeIn(300);
+	});
+	// Hide modal on click
+	$(".modal-signup-bg").click(function() {
+		event.preventDefault();
+	    $(".modal-signup").fadeOut(300);
+	});
+
+	//Google forms stuff
+	function validateEmail(email) {
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(email);
+	}
+	
+	function postToGoogle(){
+		var name = $j('#name').val();
+		var email = $j('#email').val();
+		var github = $j('#github').val();
+		var resume = $j('#resume').val();
+		var roles = $j('#roles').val();
+		var blurb = $j('#blurb').val();
+		var year = $j('#year').val();
+		var terms = $('input[name=terms]:checked', '#apply').val()
+		
+		if ((name !== "") && (email !== "") && (github !== "") && (resume !== "") && (blurb !== "") && (year !== "") && (terms === "yes") && ((feed !== "") && (validateEmail(email)))) {
+		    $j.ajax({
+		        url: "https://docs.google.com/yourFormURL/formResponse",
+		        data: {"entry.1" : name, "entry.3" : email, "entry.4": feed},
+		        type: "POST",
+		        dataType: "xml",
+		        statusCode: {
+		            0: function (){
+		
+		                $j('#name').val("");
+		                $j('#email').val("");
+		                $j('#github').val("");
+		                $j('#resume').val("");
+		                $j('#roles').val("");
+		                $j('#blurb').val("");
+		                $j('#year').val("");
+		                //Success message
+		                $(".modal-signup").fadeOut(300);
+		                
+		            },
+		            200: function (){
+		                $j('#email').val("");
+		                $j('#github').val("");
+		                $j('#resume').val("");
+		                $j('#roles').val("");
+		                $j('#blurb').val("");
+		                $j('#year').val("");
+		                //Success Message
+		                
+		                $(".modal-signup").fadeOut(300);
+		            }
+		        }
+		    });
+		}
+		else {
+		    //Error message
+		}
+	}
+
+
+
 	// Display modal on click
-	$(".modal-trigger").click(function(event) {
+	$(".modal-trigger").click(function() {
 		event.preventDefault();
 	    $(".modal").fadeIn(300);
 	});
 
+
 	// Hide modal on click
-	$(".modal-bg").click(function(event) {
+	$(".modal-bg").click(function() {
 		event.preventDefault();
 	    $(".modal").fadeOut(300);
 	});
 
 	// Smooth scrolling to first feature
-	$(".waypoint").on('click',function(event) {
+	$(".waypoint").on('click',function () {
 	    event.preventDefault();
 
 	    var target = this.hash;
@@ -33,7 +102,7 @@ $(document).ready(function() {
 	});
 
 	// Footer timeline
-	$(".trigger-1").click(function(event) {
+	$(".trigger-1").click(function() {
 		event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');
@@ -42,7 +111,7 @@ $(document).ready(function() {
 	    $(".step-1").addClass('active');
 	});
 
-	$(".trigger-2").click(function(event) {
+	$(".trigger-2").click(function() {
 		event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');
@@ -51,7 +120,7 @@ $(document).ready(function() {
 	    $(".step-2").addClass('active');
 	});
 
-	$(".trigger-3").click(function(event) {
+	$(".trigger-3").click(function() {
 		event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');
@@ -60,7 +129,7 @@ $(document).ready(function() {
 	    $(".step-3").addClass('active');
 	});
 
-	$(".trigger-4").click(function(event) {
+	$(".trigger-4").click(function() {
 		event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');
@@ -69,7 +138,7 @@ $(document).ready(function() {
 	    $(".step-4").addClass('active');
 	});
 
-	$(".trigger-5").click(function(event) {
+	$(".trigger-5").click(function() {
 		event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');

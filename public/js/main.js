@@ -24,7 +24,8 @@ $(document).ready(function() {
 	}
 	
 	function postToGoogle(){
-		var name = $j('#name').val();
+		var name = $j('#firstname').val();
+		var name = $j('#lastname').val();
 		var email = $j('#email').val();
 		var github = $j('#github').val();
 		var resume = $j('#resume').val();

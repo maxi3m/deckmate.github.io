@@ -7,19 +7,19 @@ $(document).ready(function() {
 	});
 
 	// Display modal on click
-	$(".modal-trigger").click(function() {
+	$(".modal-trigger").click(function(event) {
 		event.preventDefault();
 	    $(".modal").fadeIn(300);
 	});
 
 	// Hide modal on click
-	$(".modal-bg").click(function() {
+	$(".modal-bg").click(function(event) {
 		event.preventDefault();
 	    $(".modal").fadeOut(300);
 	});
 
 	// Smooth scrolling to first feature
-	$(".waypoint").on('click',function () {
+	$(".waypoint").on('click',function(event) {
 	    event.preventDefault();
 
 	    var target = this.hash;
@@ -33,7 +33,7 @@ $(document).ready(function() {
 	});
 
 	// Footer timeline
-	$(".trigger-1").click(function() {
+	$(".trigger-1").click(function(event) {
 		event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');
@@ -42,7 +42,7 @@ $(document).ready(function() {
 	    $(".step-1").addClass('active');
 	});
 
-	$(".trigger-2").click(function() {
+	$(".trigger-2").click(function(event) {
 		event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');
@@ -51,7 +51,7 @@ $(document).ready(function() {
 	    $(".step-2").addClass('active');
 	});
 
-	$(".trigger-3").click(function() {
+	$(".trigger-3").click(function(event) {
 		event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');
@@ -60,7 +60,7 @@ $(document).ready(function() {
 	    $(".step-3").addClass('active');
 	});
 
-	$(".trigger-4").click(function() {
+	$(".trigger-4").click(function(event) {
 		event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');
@@ -69,7 +69,7 @@ $(document).ready(function() {
 	    $(".step-4").addClass('active');
 	});
 
-	$(".trigger-5").click(function() {
+	$(".trigger-5").click(function(event) {
 		event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');

@@ -7,14 +7,14 @@ $(document).ready(function() {
 	});
 
 	// Display Signup modal on click
-	$(".modal-signup-trigger").click(function(event) {
+	$(".signup.modal-trigger").click(function(event) {
 		event.preventDefault();
-	    $(".modal-signup").fadeIn(300);
+	    $(".modal.signup").fadeIn(300);
 	});
 	// Hide modal on click
-	$(".modal-signup-bg").click(function(event) {
+	$(".signup .modal-bg").click(function(event) {
 		event.preventDefault();
-	    $(".modal-signup").fadeOut(300);
+	    $(".signup.modal").fadeOut(300);
 	});
 
 	//Google forms stuff
@@ -75,16 +75,16 @@ $(document).ready(function() {
 
 
 	// Display modal on click
-	$(".modal-trigger").click(function(event) {
+	$(".learnmore.modal-trigger").click(function(event) {
 		event.preventDefault();
-	    $(".modal").fadeIn(300);
+	    $(".learnmore.modal").fadeIn(300);
 	});
 
 
 	// Hide modal on click
-	$(".modal-bg").click(function(event) {
+	$(".learnmore .modal-bg").click(function(event) {
 		event.preventDefault();
-	    $(".modal").fadeOut(300);
+	    $(".learnmore.modal").fadeOut(300);
 	});
 
 	// Smooth scrolling to first feature

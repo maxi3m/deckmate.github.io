@@ -397,7 +397,7 @@ img {
   display: none;
   z-index: 9998; }
   .modal .modal-bg {
-    background: rgba(9, 10, 11, 0.95);
+    background: rgba(202, 202, 202, 0.90); /*rgba(9, 10, 11, 0.95);*/
     position: fixed;
     top: 0;
     right: 0;
@@ -413,7 +413,7 @@ img {
     position: absolute;
     left: 50%;
     top: 150px;
-    background: #232527;
+    background: #F1EBEB;/*#232527;*/
     border-radius: 5px;
     z-index: 9999; }
     .modal .modal-content .modal-title {

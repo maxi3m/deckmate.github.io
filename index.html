@@ -97,7 +97,7 @@
 			    <div class="subtitle">
 			        <strong>Please fill this out as accurately as possible</strong>
 			    </div>
-			    <form id="apply" target="_self" onsubmit="" action="javascript: postInternToGoogle()">
+			    <form id="apply" target="_self" onsubmit="" action="javascript: postFormToGoogle()">
 			        <fieldset>
 			            <label for="name">What's your name? *</label>
 			            <input id="name" type="text" name="name">
@@ -111,8 +111,8 @@
 			            <input id="github" type="text" name="github">
 			        </fieldset>
 			        <fieldset>
-			            <label for="linkedin">Linkedin? *</label>
-			            <input id="linkedin" type="text" name="linkedin">
+			            <label for="resume">Linkedin/Link to Resume? *</label>
+			            <input id="resume" type="text" name="resume">
 			        </fieldset>
 			        <fieldset>
 			            <label for="blurb">Describe something you are proud of (can be non-technical) *</label>
@@ -125,20 +125,20 @@
 			        </fieldset>
 			        
 			        <fieldset>
-			            <label for="resume">Roles *</label>
-			            <select class="form-control">
-							<option>QA/Testing</option>
-							<option>Backend Engineer</option>
-							<option>Fullstack</option>
-							<option>Mobile</option>
-							<option>Frontend Engineer</option>
-							<option>Security Engineer</option>
+			            <label for="roles">Preferred Role(s) *</label>
+			            <select class="form-control" name="roles">
+							<option val="QA">QA/Testing</option>
+							<option val="Backend">Backend Engineer</option>
+							<option val="Fullstack">Fullstack</option>
+							<option val="Mobile">Mobile (iOS/Android/etc)</option>
+							<option val="Frontend">Frontend Engineer</option>
+							<option val="Security">Security Engineer</option>
 						</select>
 			        </fieldset>
 			        
 			        <fieldset>
-			            <label for="resume">Current year of University *</label>
-			            <select class="form-control">
+			            <label for="year">Current year of University *</label>
+			            		<select class="form-control" name="year">
 							<option>1st</option>
 							<option>2nd</option>
 							<option>3rd</option>
@@ -146,6 +146,22 @@
 							<option>Masters</option>
 							<option>Phd</option>
 						</select>
+			        </fieldset>
+			        
+			        <fieldset>
+			            <label for="year"> I acknowledge I have read and agree with the <a href="/privacypolicy"> Privacy Policy and Service Agreement</a>. *</label>
+						<div class="radio">
+						  <label>
+						    <input type="radio" name="terms" id="optionsRadios1" value="yes" checked>
+						    Yes
+						  </label>
+						</div>
+						<div class="radio">
+						  <label>
+						    <input type="radio" name="terms" id="optionsRadios2" value="no">
+						    No
+						  </label>
+						</div>
 			        </fieldset>
 			        
 			    

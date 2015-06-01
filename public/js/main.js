@@ -53,24 +53,24 @@ $(document).ready(function() {
 		        statusCode: {
 		            0: function (){
 		
-		                $j('#name').val("");
-		                $j('#email').val("");
-		                $j('#github').val("");
-		                $j('#resume').val("");
-		                $j('#roles').val("");
-		                $j('#blurb').val("");
-		                $j('#year').val("");
+		                $('#name').val("");
+		                $('#email').val("");
+		                $('#github').val("");
+		                $('#resume').val("");
+		                $('#roles').val("");
+		                $('#blurb').val("");
+		                $('#year').val("");
 		                //Success message
 		                $(".modal-signup").fadeOut(300);
 		                
 		            },
 		            200: function (){
-		                $j('#email').val("");
-		                $j('#github').val("");
-		                $j('#resume').val("");
-		                $j('#roles').val("");
-		                $j('#blurb').val("");
-		                $j('#year').val("");
+		                $('#email').val("");
+		                $('#github').val("");
+		                $('#resume').val("");
+		                $('#roles').val("");
+		                $('#blurb').val("");
+		                $('#year').val("");
 		                //Success Message
 		                
 		                $(".modal-signup").fadeOut(300);

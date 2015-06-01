@@ -60,7 +60,7 @@ $(document).ready(function() {
 		                $('#roles').val("");
 		                $('#blurb').val("");
 		                $('#year').val("");
-		                //Success message
+		                //Error message
 		                $(".modal-signup").fadeOut(300);
 		                
 		            },

@@ -38,6 +38,17 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
 
+.signup.modal-trigger {
+    padding: 15px 80px;
+    display: inline-block;
+    color: #0C7BF8;
+    background: #FFF;
+    text-decoration: none;
+    line-height: 1;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 9999px; }
+
 input {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
 

@@ -75,16 +75,16 @@ $(document).ready(function() {
 
 
 	// Display modal on click
-	$(".learnmore.modal-trigger").click(function(event) {
+	$(".learn-more.modal-trigger").click(function(event) {
 		event.preventDefault();
-	    $(".learnmore.modal").fadeIn(300);
+	    $(".learn-more.modal").fadeIn(300);
 	});
 
 
 	// Hide modal on click
-	$(".learnmore .modal-bg").click(function(event) {
+	$(".learn-more .modal-bg").click(function(event) {
 		event.preventDefault();
-	    $(".learnmore.modal").fadeOut(300);
+	    $(".learn-more.modal").fadeOut(300);
 	});
 
 	// Smooth scrolling to first feature

@@ -34,7 +34,7 @@ $(document).ready(function() {
 		var year = $j('#year').val();
 		var terms = $('input[name=terms]:checked', '#apply').val()
 		
-		if ((name !== "") && (email !== "") && (github !== "") && (resume !== "") && (blurb !== "") && (year !== "") && (terms === "yes") && ((feed !== "") && (validateEmail(email)))) {
+		if ((firstname !== "") && (lastname !== "") && (email !== "") && (github !== "") && (resume !== "") && (blurb !== "") && (year !== "") && (terms === "yes") && ((feed !== "") && (validateEmail(email)))) {
 		    $j.ajax({
 		        url: "https://docs.google.com/yourFormURL/formResponse",
 		        data: {"entry.1" : name, "entry.3" : email, "entry.4": feed},

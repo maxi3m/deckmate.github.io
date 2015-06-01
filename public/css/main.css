@@ -397,7 +397,7 @@ img {
   display: none;
   z-index: 9998; }
   .modal .modal-bg {
-    background: rgba(202, 202, 202, 0.90); /*rgba(9, 10, 11, 0.95);*/
+    background: rgba(9, 10, 11, 0.70);
     position: fixed;
     top: 0;
     right: 0;

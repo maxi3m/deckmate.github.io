@@ -23,7 +23,7 @@ $(document).ready(function() {
 		return re.test(email);
 	}
 	
-	function postToGoogle(){
+	function postFormToGoogle(){
 		var name = $j('#firstname').val();
 		var name = $j('#lastname').val();
 		var email = $j('#email').val();

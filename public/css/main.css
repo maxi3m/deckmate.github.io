@@ -51,6 +51,19 @@ body {
     margin-top:80px;
 }
 
+.recruit.modal-trigger {
+    padding: 15px 80px;
+    display: inline-block;
+    background: rgb(36,192,235,0.1);
+    color: #FFF;
+    text-decoration: none;
+    line-height: 1;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 9999px; 
+    margin-top:80px;
+}
+
 .signup.modal-trigger:hover {
   background-color: #232527;
   

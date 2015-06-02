@@ -47,7 +47,9 @@ body {
     line-height: 1;
     font-size: 18px;
     font-weight: 700;
-    border-radius: 9999px; }
+    border-radius: 9999px; 
+    margin-top:80px;
+}
 
 input {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }

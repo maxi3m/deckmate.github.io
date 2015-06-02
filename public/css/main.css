@@ -370,7 +370,10 @@ img {
     .footer .footerbar .logo {
       height: 59px;
       width: auto;
-      margin: 0 auto 125px; }
+      margin: 0 auto 125px;
+      color: white;
+font-size: 3em;
+text-align: center;}
     .footer .footerbar a {
       color: rgba(255, 255, 255, 0.6); }
       .footer .footerbar a:hover {

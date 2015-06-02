@@ -274,7 +274,7 @@ img {
 
 .footer {
   padding: 150px 0;
-  background: #5CCEEE url(/static/images/landscape.jpg) center bottom no-repeat; }
+  background: #5CCEEE url(/public/img/footer_back.jpg) center bottom no-repeat; }
   .footer .slider .slider-text {
     text-align: center; }
     .footer .slider .slider-text .step-count {

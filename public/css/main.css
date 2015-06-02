@@ -41,7 +41,7 @@ body {
 .signup.modal-trigger {
     padding: 15px 80px;
     display: inline-block;
-    color: #0C7BF8;
+    color: #5CCEEE;
     background: #FFF;
     text-decoration: none;
     line-height: 1;
@@ -175,7 +175,7 @@ img {
   position: absolute;
   top: -250px;
   left: 50%;
-  color: #0C7BF8;
+  color: #5CCEEE;
   font-size: 200px;
   line-height: 1;
   font-weight: 700;
@@ -186,7 +186,7 @@ img {
   z-index: 1; }
 .feature-1 .feature-title, .feature-2 .feature-title {
   margin-bottom: 60px;
-  color: #0C7BF8;
+  color: #5CCEEE;
   font-size: 34px;
   font-weight: 300;
   line-height: 1.2; }
@@ -263,7 +263,7 @@ img {
     padding: 15px 80px;
     display: inline-block;
     color: #FFF;
-    background: #0C7BF8;
+    background: #5CCEEE;
     text-decoration: none;
     line-height: 1;
     font-size: 18px;

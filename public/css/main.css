@@ -38,6 +38,19 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
 
+.signup.modal-trigger {
+    padding: 15px 80px;
+    display: inline-block;
+    color: #FFF;
+    background: #24C0EB;
+    text-decoration: none;
+    line-height: 1;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 9999px; 
+    margin-top:80px;
+}
+
 input {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
 
@@ -64,7 +77,7 @@ img {
 
 .navbar {
   height: 90px;
-  background: #0A7BF8;
+  background: #5CCEEE;
   position: relative; }
   .navbar .menu-button {
     text-decoration: none;
@@ -127,9 +140,9 @@ img {
           color: #0A7BF8; }
 
 .hero {
-  padding: 440px 0 600px;
+  padding: 380px 0 600px;
   position: relative;
-  background-color: #0A7BF8;
+  background-color: #5CCEEE;
   background-image: url(/static/images/lifebuoy.png);
   background-size: 40%;
   background-repeat: no-repeat;
@@ -164,7 +177,7 @@ img {
   position: absolute;
   top: -250px;
   left: 50%;
-  color: #0C7BF8;
+  color: #5CCEEE;
   font-size: 200px;
   line-height: 1;
   font-weight: 700;
@@ -175,7 +188,7 @@ img {
   z-index: 1; }
 .feature-1 .feature-title, .feature-2 .feature-title {
   margin-bottom: 60px;
-  color: #0C7BF8;
+  color: #5CCEEE;
   font-size: 34px;
   font-weight: 300;
   line-height: 1.2; }
@@ -200,7 +213,7 @@ img {
 
 .feature-2 {
   padding: 400px 0 500px;
-  background: #F5F8FA; }
+  background: #F1EBEB; }
   .feature-2 .feature-info {
     padding-top: 75px;
     float: left; }
@@ -252,7 +265,7 @@ img {
     padding: 15px 80px;
     display: inline-block;
     color: #FFF;
-    background: #0C7BF8;
+    background: #5CCEEE;
     text-decoration: none;
     line-height: 1;
     font-size: 18px;
@@ -261,7 +274,7 @@ img {
 
 .footer {
   padding: 150px 0;
-  background: #0C7BF8 url(/static/images/landscape.jpg) center bottom no-repeat; }
+  background: #5CCEEE url(/static/images/landscape.jpg) center bottom no-repeat; }
   .footer .slider .slider-text {
     text-align: center; }
     .footer .slider .slider-text .step-count {
@@ -284,7 +297,7 @@ img {
     .footer .slider .slider-text .contact-us {
       padding: 15px 80px;
       display: inline-block;
-      color: #0C7BF8;
+      color: #5CCEEE;
       background: #FFF;
       text-decoration: none;
       line-height: 1;
@@ -359,7 +372,12 @@ img {
     .footer .footerbar .logo {
       height: 59px;
       width: auto;
-      margin: 0 auto 125px; }
+      margin: 0 auto 125px;
+      color: white;
+      font-size: 3em;
+      text-align: center;
+      display:block;
+    }
     .footer .footerbar a {
       color: rgba(255, 255, 255, 0.6); }
       .footer .footerbar a:hover {
@@ -386,7 +404,7 @@ img {
   display: none;
   z-index: 9998; }
   .modal .modal-bg {
-    background: rgba(9, 10, 11, 0.95);
+    background: rgba(9, 10, 11, 0.70);
     position: fixed;
     top: 0;
     right: 0;
@@ -726,7 +744,11 @@ img {
 
   .footer .footerbar .logo {
     display: none;
-    visibility: hidden; }
+    visibility: hidden; 
+    color: white;
+    font-size: 3em;
+    text-align: center;
+  }
 
   .footer .footerbar {
     color: white; }

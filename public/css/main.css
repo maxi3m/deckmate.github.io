@@ -51,6 +51,11 @@ body {
     margin-top:80px;
 }
 
+.signup.modal-trigger:hover {
+  background-color: #232527;
+  
+}
+
 input {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
 

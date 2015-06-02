@@ -372,8 +372,10 @@ img {
       width: auto;
       margin: 0 auto 125px;
       color: white;
-font-size: 3em;
-text-align: center;}
+      font-size: 3em;
+      text-align: center;
+      display:block;
+    }
     .footer .footerbar a {
       color: rgba(255, 255, 255, 0.6); }
       .footer .footerbar a:hover {

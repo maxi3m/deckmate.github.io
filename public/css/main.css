@@ -737,7 +737,11 @@ img {
 
   .footer .footerbar .logo {
     display: none;
-    visibility: hidden; }
+    visibility: hidden; 
+    color: white;
+    font-size: 3em;
+    text-align: center;
+  }
 
   .footer .footerbar {
     color: white; }

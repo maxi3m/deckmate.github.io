@@ -102,6 +102,20 @@ $(document).ready(function() {
 	    $(".learn-more.modal").fadeOut(300);
 	});
 
+	// Display modal on click
+	$(".recruit.modal-trigger").click(function(event) {
+		event.preventDefault();
+	    $(".recruit.modal").fadeIn(300);
+	});
+
+
+	// Hide modal on click
+	$(".recruit .modal-bg").click(function(event) {
+		event.preventDefault();
+	    $(".recruit.modal").fadeOut(300);
+	});
+
+
 	// Smooth scrolling to first feature
 	$(".waypoint").on('click',function (event) {
 	    event.preventDefault();

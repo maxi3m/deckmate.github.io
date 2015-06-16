@@ -512,9 +512,19 @@ img {
 
   .feature-1 .feature-image {
     left: -15px; }
+    
+  .feature-1 .feature-info {
+        padding-left:200px;
+  }
+  .feature-2 .feature-info {
+        padding-left:0;
+        margin-left:0;
+  }
 
   .feature-1 .feature-info, .feature-2 .feature-info {
-    padding-top: 0; }
+    padding-top: 0; 
+
+  }
 
   .hero h2 {
     font-size: 80px; }
@@ -629,6 +639,7 @@ img {
 
   .feature-1 .feature-info, .feature-2 .feature-info {
     float: none;
+    
     margin: 0 auto;
     max-width: 480px; }
 

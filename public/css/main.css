@@ -220,7 +220,9 @@ img {
   position: relative; }
   .feature-1 .feature-list li, .feature-2 .feature-list li {
     margin-bottom: 35px;
-    list-style-position: inside; }
+    list-style-position: inside; 
+    list-style:none;
+  }
 
 .feature-1 {
   padding: 400px 0 300px; }

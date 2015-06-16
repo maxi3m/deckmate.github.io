@@ -552,7 +552,7 @@ img {
     background-position: 50% 25%; } }
 @media (max-width: 1300px) {
   .hero {
-    padding: 150px 0 370px; }
+    padding: 150px 0 250px; }
 
   .feature-1 {
     padding: 400px 0 150px; }

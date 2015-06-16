@@ -519,6 +519,7 @@ img {
   .feature-2 .feature-info {
         padding-left:0;
         margin-left:0;
+        margin-right:650px;
   }
 
   .feature-1 .feature-info, .feature-2 .feature-info {

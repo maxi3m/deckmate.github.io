@@ -384,7 +384,7 @@ img {
     .footer .slider .timeline-steps .trigger-5 {
       right: 20px; }
   .footer .footerbar {
-    padding-top: 350px;
+    /*padding-top: 350px;*/
     font-size: 18px;
     color: rgba(255, 255, 255, 0.6); }
     .footer .footerbar .logo {

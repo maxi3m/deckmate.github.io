@@ -1,0 +1,63 @@
+.signup.modal {
+	/*max-height: 100%;*/
+	position: absolute;
+}
+
+.signup.modal .modal-content {
+	padding-top:0;
+	/*max-height: 100%;*/
+}
+
+.signup.modal .contact-us-form > .title > h1{
+	font-size: 2.2em;
+}
+.signup.modal .contact-us-form > .subtitle {
+		padding-bottom: 1.2em;
+		font-size: 0.8em;
+		/*border-bottom: 1px gray solid;*/
+}
+.signup.modal .contact-us-form .field-group {
+	padding-top: 0.9em;
+}
+.signup.modal .contact-us-form .field-group fieldset {
+	padding-top: 6px;
+}
+
+.signup.modal .contact-us-form {
+  max-width: 600px;
+  width: 100%;
+  margin: 25px auto;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font: 14px "Lato",sans-serif;
+  border: 1px solid #d7d7d7;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+button[type="submit"].form-control {
+  background-color:#5CCEEE;
+  color:white;
+  font-size:20px;
+  font-weight: 900;
+}
+
+.form-control-split {
+  padding: 10px;
+  font: 14px "Lato",sans-serif;
+  border: 1px solid #d7d7d7;
+}
+
+
+.padded-label {
+  padding: 13px 0 4px;
+}
+
+label {
+	display: block;
+	font-weight: 700;
+}

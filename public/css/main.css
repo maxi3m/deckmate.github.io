@@ -165,6 +165,9 @@ img {
 }
 .hero.privacy h3 {
   color: #5CCEEE;
+  padding-top: 1.25em;
+  padding-bottom: 0.35em;
+  font-weight: 700;
 }
 .hero.privacy h2 {
     margin-bottom: 10px;

@@ -407,12 +407,14 @@ img {
     .footer .slider .timeline-steps .trigger-1 {
       left: 42px; }
     .footer .slider .timeline-steps .trigger-2 {
-      left: calc(25% + 20px); }
+      left: calc(20% + 20px); }
     .footer .slider .timeline-steps .trigger-3 {
-      left: 50%; }
+      left: 40%; }
     .footer .slider .timeline-steps .trigger-4 {
-      left: calc(75% - 20px); }
+      left: calc(60% - 20px); }
     .footer .slider .timeline-steps .trigger-5 {
+      left: 80%; }
+    .footer .slider .timeline-steps .trigger-6 {
       right: 20px; }
   .footer .footerbar {
     /*padding-top: 350px;*/

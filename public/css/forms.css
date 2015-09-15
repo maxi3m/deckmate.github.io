@@ -3,6 +3,14 @@
 	position: absolute;
 }
 
+.signup.modal#student {
+ 	background-color: #343638;
+}
+.signup.modal#startup {
+ 	color: #343638;
+ 	background-color: #fff;
+}
+
 .signup.modal .modal-content {
 	padding-top:0;
 	/*max-height: 100%;*/

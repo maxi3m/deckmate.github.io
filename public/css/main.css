@@ -11,7 +11,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .privacy p {
   text-align: left;
 }
-section.privacy {
+.privacy {
   color: #5CCEEE;
   background-color: white;
 }

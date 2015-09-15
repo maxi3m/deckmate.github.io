@@ -3,10 +3,10 @@
 	position: absolute;
 }
 
-.signup.modal#student {
+.signup.modal#student > .modal-content {
  	background-color: #343638;
 }
-.signup.modal#startup {
+.signup.modal#startup > .modal-content {
  	color: #343638;
  	background-color: #fff;
 }

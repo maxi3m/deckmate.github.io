@@ -373,21 +373,17 @@ img {
       .footer .slider .timeline .step.active {
         background: #FFF; }
     .footer .slider .timeline .step-1 {
-      left: 10px; }
+      left: 20px; }
     .footer .slider .timeline .step-2 {
-      left: calc(14.3% - 2px); }
+      left: calc(20% - 2px); }
     .footer .slider .timeline .step-3 {
-      left: calc(28.6% - 12px); }
+      left: calc(40% - 22px); }
     .footer .slider .timeline .step-4 {
-      left: calc(42.9% - 22px); }
+      left: calc(60% - 42px); }
     .footer .slider .timeline .step-5 {
-      left: calc(57.2% - 36px); }
-      .footer .slider .timeline .step-6 {
-      left: calc(71.5% - 46px); }
-      .footer .slider .timeline .step-7 {
-      left: calc(85.8% - 56px); }
-      .footer .slider .timeline .step-8 {
-      left: calc(100% - 66px); }
+      left: calc(80% - 66px); }
+    .footer .slider .timeline .step-6 {
+      left: calc(100% - 88px); }
   .footer .slider .timeline-steps {
     margin: 100px 0 0; }
     .footer .slider .timeline-steps .container {
@@ -411,19 +407,13 @@ img {
     .footer .slider .timeline-steps .trigger-1 {
       left: 42px; }
     .footer .slider .timeline-steps .trigger-2 {
-      left: calc(28.6% + 20px); }
+      left: calc(25% + 20px); }
     .footer .slider .timeline-steps .trigger-3 {
       left: 50%; }
     .footer .slider .timeline-steps .trigger-4 {
-      left: calc(42.9% - 20px); }
+      left: calc(75% - 20px); }
     .footer .slider .timeline-steps .trigger-5 {
       right: 20px; }
-    .footer .slider .timeline-steps .trigger-6 {
-      left: calc(57.2% + 20px); }
-    .footer .slider .timeline-steps .trigger-7 {
-      left: 71.5%; }
-    .footer .slider .timeline-steps .trigger-8 {
-      left: calc(85.8% - 20px); }
   .footer .footerbar {
     /*padding-top: 350px;*/
     font-size: 18px;
@@ -720,7 +710,7 @@ img {
   .footer .slider .slider-text .step-title.step-1 {
     display: none; }
 
-  .footer .slider .slider-text .step-title.step-5 {
+  .footer .slider .slider-text .step-title.step-6 {
     display: block; }
 
   .footer .slider .slider-text .contact-us {
@@ -830,7 +820,7 @@ img {
     display: none !important;
     visibility: hidden !important; }
 
-  .footer .slider .slider-text .step-title.step-5 {
+  .footer .slider .slider-text .step-title.step-6 {
     padding: 0 20px; }
 
   .hero h2 {

@@ -3,12 +3,12 @@
 	position: absolute;
 }
 
-.signup.modal#student > .modal-content {
+.signup.modal > .modal-content {
  	background-color: #343638;
 }
 .signup.modal#startup > .modal-content {
- 	color: #343638;
- 	background-color: #fff;
+ 	/*color: #343638;*/
+ 	/*background-color: #fff;*/
 }
 
 .signup.modal .modal-content {

@@ -66,9 +66,9 @@ body {
     margin-top:8px;
 }
 
-.signup.modal-trigger:hover {
-  background-color: #232527;
-  
+.signup.modal-trigger:hover, .recruit.modal-trigger:hover {
+  background-color: #343638;
+  color: white;
 }
 
 input {
@@ -270,7 +270,7 @@ img {
 
 .why {
   padding: 100px 0 150px;
-  background: #232527;
+  background: #343638;
   text-align: center; }
   .why .container {
     position: relative; }
@@ -322,6 +322,14 @@ img {
 .footer {
   padding: 30px 0;
   background: #5CCEEE url(/public/img/footer_back1.jpg) center bottom no-repeat; }
+  .footer > h3 {
+    text-align: center;
+    margin-bottom: 80px;
+    color: #343638;
+    font-size: 60px;
+    font-weight: 100;
+    position: relative;
+  }
   .footer .slider .slider-text {
     text-align: center; }
     .footer .slider .slider-text .step-count {

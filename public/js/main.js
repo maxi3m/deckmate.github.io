@@ -242,12 +242,19 @@ $(document).ready(function() {
 	});
 
 	$(".trigger-5").click(function(event) {
-		event.preventDefault();
+	    event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');
 	    $(this).addClass('active');
 	    $(".step-5").addClass('active');
-	    $(".contact-us").addClass('active');
+	});
+	$(".trigger-6").click(function(event) {
+	    event.preventDefault();
+	    $(".trigger").removeClass('active');
+	    $(".step").removeClass('active');
+	    $(this).addClass('active');
+	    $(".step-6").addClass('active');
+	    //$(".contact-us").addClass('active');
 	});
 
 	// Trigger the slider

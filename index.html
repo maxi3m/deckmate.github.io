@@ -166,15 +166,15 @@
 					        <fieldset>
 				        		<label for="terms" style="font-size:0.9em; line-height:1.2em;"> I acknowledge I have read and agree with the <a href="/privacypolicy"> Privacy Policy and Service Agreement</a>. *
 				        		</label>
-								<div class="radio" style="display:inline;">
-								    <input required type="radio" name="terms" id="optionsRadios1" value="yes">
-								    Yes
-								</div>
-								<div class="radio" style="display:inline;">
-								    <input required type="radio" name="terms" id="optionsRadios2" value="no">
-								    No
-								</div>
-								<!-- <div style="text-align: right; padding-bottom: 15px;">* Required</div> -->
+							<div class="radio" style="display:inline;">
+							    <input required type="radio" name="terms" id="optionsRadios1" value="yes">
+							    Yes
+							</div>
+							<div class="radio" style="display:inline;">
+							    <input required type="radio" name="terms" id="optionsRadios2" value="no">
+							    No
+							</div>
+							<!-- <div style="text-align: right; padding-bottom: 15px;">* Required</div> -->
 					        </fieldset>
 				    	</div>    
 
@@ -232,18 +232,18 @@
 					            <label>Hiring</label>
 					            <fieldset>
 						            <label for="roles">Preferred Candidate Role(s) *</label>
-						            <select class="form-control" name="roles" id="roles">
-										<option value="QA">QA/Testing</option>
-										<option value="Backend">Backend Engineer</option>
-										<option value="Fullstack">Fullstack</option>
-										<option value="Mobile">Mobile (iOS/Android/etc)</option>
-										<option value="Frontend">Frontend Engineer</option>
-										<option value="Security">Security Engineer</option>
-									</select>
+						            <select class="form-control" name="roles" id="roles" multiple="multiple">
+									<option value="QA">QA/Testing</option>
+									<option value="Backend">Backend Engineer</option>
+									<option value="Fullstack">Fullstack</option>
+									<option value="Mobile">Mobile (iOS/Android/etc)</option>
+									<option value="Frontend">Frontend Engineer</option>
+									<option value="Security">Security Engineer</option>
+								</select>
 						        </fieldset>
 						        <fieldset>
 						            <label for="roles">Preferred Candidate Location(s)</label>
-						            <select class="form-control" name="locations" id="roles">
+						            <select class="form-control" name="locations" id="locations" multiple="multiple">
 										<option value="Vancouver">Vancouver</option>
 										<option value="Seattle">Seattle</option>
 										<option value="Remote">Remote</option>
@@ -251,14 +251,10 @@
 						        </fieldset>
 					        </fieldset>
 				        </div>
-						<!-- <fieldset>
-				            <label for="blurb">Describe something you are proud of (can be non-technical) *</label>
-				            <textarea class="form-control" rows="3" name="blurb"></textarea>
-				        </fieldset>
-				         -->
+
 				        <div class="field-group">
 					        <fieldset>
-					            <label for="name">Company HR Contact</label>
+					            <label for="name">Hiring Manager Contact</label>
 					            <input required id="firstname" type="text" name="firstname" class="form-control-split col-xs-2" placeholder="Firstname" style="width:41%;">
 					            <input required id="lastname" type="text" name="lastname" class="form-control-split col-xs-8" placeholder="Lastname" style="width:57.5%;">
 					        </fieldset>

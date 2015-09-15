@@ -210,6 +210,7 @@ img {
     opacity: 0.6; }
     .hero .go-down:hover {
       opacity: 1; 
+    }
 
 
 .feature-1 .container, .feature-2 .container {
@@ -630,7 +631,7 @@ img {
 
   .footer .footerbar .logo {
     /*margin-bottom: 100px; }*/
-
+  }
   .footer {
     padding-bottom: 40px; } }
 @media (max-width: 1150px) {

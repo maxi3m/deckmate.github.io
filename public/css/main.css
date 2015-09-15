@@ -158,7 +158,13 @@ img {
         line-height: 1; }
         .navbar .nav-account li .sign-up:hover {
           color: #0A7BF8; }
-
+.hero.privacy {
+  color: #5CCEEE;
+  background-color: white;
+}
+  .hero.privacy p {
+    text-align: left;
+  }
 .hero {
   padding: 380px 0 600px;
   position: relative;
@@ -187,14 +193,6 @@ img {
     opacity: 0.6; }
     .hero .go-down:hover {
       opacity: 1; 
-
-.privacy {
-  color: #5CCEEE;
-  background-color: white;
-}
-  .privacy p {
-    text-align: left;
-  }
 
 
 .feature-1 .container, .feature-2 .container {

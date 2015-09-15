@@ -113,7 +113,7 @@ $(document).ready(function() {
 	};
 		
 	var postFormToGoogle = function(form_type){
-		var form = $(".signup.modal#"+form_type+" form").serializeObject();
+		var form = $("#startup_form").serializeObject();
 		
 		console.log(form);
 		

@@ -324,6 +324,7 @@ img {
   background: #5CCEEE url(/public/img/footer_back1.jpg) center bottom no-repeat; }
   .footer .slider > h3 {
     text-align: center;
+    padding-top: 100px;
     margin-bottom: 80px;
     color: #343638;
     font-size: 60px;

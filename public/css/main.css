@@ -163,10 +163,12 @@ img {
   padding: 25px 0 50px;
   background-color: white;
 }
+.hero.privacy h3 {
+  color: #5CCEEE;
+}
 .hero.privacy h2 {
     margin-bottom: 10px;
-    font-size: 75px;
-    font-weight: 500; }
+    font-size: 75px;}
   .hero.privacy p, .hero.privacy h3 {
     text-align: left;
   }

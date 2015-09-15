@@ -8,13 +8,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
-.privacy p {
-  text-align: left;
-}
-.privacy {
-  color: #5CCEEE;
-  background-color: white;
-}
 
 body {
   line-height: 1; 
@@ -193,7 +186,16 @@ img {
     bottom: 150px;
     opacity: 0.6; }
     .hero .go-down:hover {
-      opacity: 1; }
+      opacity: 1; 
+
+.privacy {
+  color: #5CCEEE;
+  background-color: white;
+}
+  .privacy p {
+    text-align: left;
+  }
+
 
 .feature-1 .container, .feature-2 .container {
   max-width: 1150px;

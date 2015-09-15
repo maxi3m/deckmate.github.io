@@ -373,14 +373,20 @@ img {
       .footer .slider .timeline .step.active {
         background: #FFF; }
     .footer .slider .timeline .step-1 {
-      left: 20px; }
+      left: 10px; }
     .footer .slider .timeline .step-2 {
-      left: calc(25% - 2px); }
+      left: calc(14.3% - 2px); }
     .footer .slider .timeline .step-3 {
-      left: calc(50% - 22px); }
+      left: calc(28.6% - 12px); }
     .footer .slider .timeline .step-4 {
-      left: calc(75% - 42px); }
+      left: calc(42.9% - 22px); }
     .footer .slider .timeline .step-5 {
+      left: calc(57.2% - 36px); }
+      .footer .slider .timeline .step-6 {
+      left: calc(71.5% - 46px); }
+      .footer .slider .timeline .step-7 {
+      left: calc(85.8% - 56px); }
+      .footer .slider .timeline .step-8 {
       left: calc(100% - 66px); }
   .footer .slider .timeline-steps {
     margin: 100px 0 0; }
@@ -405,13 +411,19 @@ img {
     .footer .slider .timeline-steps .trigger-1 {
       left: 42px; }
     .footer .slider .timeline-steps .trigger-2 {
-      left: calc(25% + 20px); }
+      left: calc(28.6% + 20px); }
     .footer .slider .timeline-steps .trigger-3 {
       left: 50%; }
     .footer .slider .timeline-steps .trigger-4 {
-      left: calc(75% - 20px); }
+      left: calc(42.9% - 20px); }
     .footer .slider .timeline-steps .trigger-5 {
       right: 20px; }
+    .footer .slider .timeline-steps .trigger-6 {
+      left: calc(57.2% + 20px); }
+    .footer .slider .timeline-steps .trigger-7 {
+      left: 71.5%; }
+    .footer .slider .timeline-steps .trigger-8 {
+      left: calc(85.8% - 20px); }
   .footer .footerbar {
     /*padding-top: 350px;*/
     font-size: 18px;

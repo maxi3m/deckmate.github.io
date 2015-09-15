@@ -6,15 +6,26 @@ $(document).ready(function() {
 		$(".nav-links").slideToggle(300);
 	});
 
-	// Display Signup modal on click
+	// Display Student Signup modal on click
 	$(".signup.modal-trigger").click(function(event) {
-		event.preventDefault();
-	    $(".modal.signup").fadeIn(300);
+	    event.preventDefault();
+	    $(".signup.modal#student").fadeIn(300);
 	});
 	// Hide modal on click
-	$(".signup .modal-bg").click(function(event) {
+	$(".signup.modal#student .modal-bg").click(function(event) {
+	    event.preventDefault();
+	    $(".signup.modal#student").fadeOut(300);
+	});
+	
+	// Display Startup Signup modal on click
+	$(".recruit.modal-trigger").click(function(event) {
+	    event.preventDefault();
+	    $(".signup.modal#startup").fadeIn(300);
+	});
+	// Hide modal on click
+	$(".signup.modal#startup .modal-bg").click(function(event) {
 		event.preventDefault();
-	    $(".signup.modal").fadeOut(300);
+	    $(".signup.modal#startup").fadeOut(300);
 	});
 
 	//Google forms stuff
@@ -23,7 +34,7 @@ $(document).ready(function() {
 		return re.test(email);
 	}
 	
-	function postFormToGoogle(){
+	var postInternFormToGoogle = function(){
 		var firstname = $('#firstname').val();
 		var lastname = $('#lastname').val();
 		var email = $('#email').val();
@@ -82,12 +93,89 @@ $(document).ready(function() {
 		    //Error message
 		    console.log("Please make sure you have filled out all required inputs before submitting")
 		}
-	}
+	};
+	
+	$.fn.serializeObject = function()
+	{
+	    var o = {};
+	    var a = this.serializeArray();
+	    $.each(a, function() {
+	        if (o[this.name] !== undefined) {
+	            if (!o[this.name].push) {
+	                o[this.name] = [o[this.name]];
+	            }
+	            o[this.name].push(this.value || '');
+	        } else {
+	            o[this.name] = this.value || '';
+	        }
+	    });
+	    return o;
+	};
+		
+	var postFormToGoogle = function(form_type){
+		var form = $(".modal."+form_type+" form").serializeObject();
+		
+		console.log(form);
+		
+		// if ((firstname !== "") && (lastname !== "") && (email !== "") && (github !== "") && (resume !== "") && (blurb !== "") && (year !== "") && (terms === "yes") && validateEmail(email) ) {
+		//     $.ajax({
+		//         url: "https://docs.google.com/forms/a/deckmate.github.io/forms/d1NoC9QFAj_T0OZaR9dQEnddp-xzQ0OGo58627dgnM-y4/formResponse",
+		//         data: {
+		//         	"entry.735980176" : firstname, 
+		//         	"entry.1855865340" : lastname, 
+		//         	"entry.568150418" : email,
+		//         	"entry.1922611629" : github,
+		//         	"entry.670080863" : resume,
+		//         	"entry.452937369" : blurb,
+		//         	"entry.645095933" : roles,
+		//         	"entry.905553991" : year,
+		        	
+		//         },
+		//         type: "POST",
+		//         dataType: "xml",
+		//         statusCode: {
+		//             0: function (){
+		
+		//                 $('#name').val("");
+		//                 $('#email').val("");
+		//                 $('#github').val("");
+		//                 $('#resume').val("");
+		//                 $('#roles').val("");
+		//                 $('#blurb').val("");
+		//                 $('#year').val("");
+		//                 //Error message
+		//                 $(".modal-signup").fadeOut(300);
+		                
+		//             },
+		//             200: function (){
+		//                 $('#email').val("");
+		//                 $('#github').val("");
+		//                 $('#resume').val("");
+		//                 $('#roles').val("");
+		//                 $('#blurb').val("");
+		//                 $('#year').val("");
+		//                 //Success Message
+		                
+		//                 $(".modal-signup").fadeOut(300);
+		//             }
+		//         }
+		//     });
+		// }
+		// else {
+		//     //Error message
+		//     console.log("Please make sure you have filled out all required inputs before submitting")
+		// }
+	};
 	
 	$('#intern_form').submit(function() {
-            postFormToGoogle();
-            return false;
-        });
+        postInternFormToGoogle();
+        return false;
+    });
+
+	$('#startup_form').submit(function() {
+        postFormToGoogle('startup');
+        return false;
+    });
 
 	// Display modal on click
 	$(".learn-more.modal-trigger").click(function(event) {
@@ -95,24 +183,10 @@ $(document).ready(function() {
 	    $(".learn-more.modal").fadeIn(300);
 	});
 
-
 	// Hide modal on click
 	$(".learn-more .modal-bg").click(function(event) {
 		event.preventDefault();
 	    $(".learn-more.modal").fadeOut(300);
-	});
-
-	// Display modal on click
-	$(".recruit.modal-trigger").click(function(event) {
-		event.preventDefault();
-	    $(".recruit.modal").fadeIn(300);
-	});
-
-
-	// Hide modal on click
-	$(".recruit .modal-bg").click(function(event) {
-		event.preventDefault();
-	    $(".recruit.modal").fadeOut(300);
 	});
 
 

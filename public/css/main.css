@@ -11,6 +11,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .privacy p {
   text-align: left;
 }
+section.privacy {
+  color: #5CCEEE;
+  background-color: white;
+}
+
 body {
   line-height: 1; 
   overflow-x:hidden;

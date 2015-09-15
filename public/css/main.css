@@ -428,19 +428,23 @@ img {
       right: 35px; }
   .footer .footerbar {
     /*padding-top: 350px;*/
+    padding-top: 30px;
+    background-color: white;
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.6); }
+    color: #5CCEEE;
+    /*color: rgba(255, 255, 255, 0.6); }*/
     .footer .footerbar .logo {
       height: 59px;
       width: auto;
       margin: 0 auto 35px;
-      color: white;
+      color: #5CCEEE;
       font-size: 3em;
       text-align: center;
       display:block;
     }
     .footer .footerbar a {
-      color: rgba(255, 255, 255, 0.6); }
+      /*color: rgba(255, 255, 255, 0.6); }*/
+      color: #5CCEEE;}
       .footer .footerbar a:hover {
         color: #FFF;
         text-decoration: none; }

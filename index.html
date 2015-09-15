@@ -107,12 +107,12 @@
 					        <fieldset>
 					        	<!-- <label for="email">What's your full name? *</label> -->
 					        	<label for="firstname">Personal</label>
-					            <input id="firstname" type="text" name="firstname" class="form-control-split col-xs-2" placeholder="Firstname" style="width:41%;">
-					            <input id="lastname" type="text" name="lastname" class="form-control-split col-xs-8" placeholder="Lastname" style="width:57.5%;">
+					            <input id="firstname" required type="text" name="firstname" class="form-control-split col-xs-2" placeholder="Firstname" style="width:41%;">
+					            <input id="lastname" required type="text" name="lastname" class="form-control-split col-xs-8" placeholder="Lastname" style="width:57.5%;">
 					        </fieldset>
 					        <fieldset>
 					            <!-- <label for="email">What's your email? *</label> -->
-					            <input class="form-control" id="email" type="text" name="email" placeholder="Email">
+					            <input class="form-control" required id="email" type="email" name="email" placeholder="Email">
 					        </fieldset>
 				        </div>
 				        <div class="field-group">
@@ -122,7 +122,7 @@
 					        </fieldset>
 					        <fieldset>
 					            <!-- <label for="resume">Linkedin/Resume? *</label> -->
-					            <input class="form-control" id="resume" type="text" name="resume" placeholder="LinkedIn / Link to Resume">
+					            <input class="form-control" required id="resume" type="url" name="resume" placeholder="LinkedIn / Link to Resume">
 					        </fieldset>
 				        </div>
 						<!-- <fieldset>
@@ -138,7 +138,7 @@
 				        <div class="field-group">
 					        <fieldset>
 					            <label for="roles">Preferred Role(s) *</label>
-					            <select class="form-control" name="roles" id="roles">
+					            <select required class="form-control" name="roles" id="roles">
 									<option value="QA">QA/Testing</option>
 									<option value="Backend">Backend Engineer</option>
 									<option value="Fullstack">Fullstack</option>
@@ -150,7 +150,7 @@
 					        
 					        <fieldset>
 					            <label for="year">Current year of University *</label>
-			            		<select class="form-control" name="year" id="year">
+			            		<select required class="form-control" name="year" id="year">
 			            			<option value="Highschool">Highschool</option> 
 									<option value="1st Year">1st Year</option> 
 									<option value="2nd Year">2nd Year</option> 
@@ -167,11 +167,11 @@
 				        		<label for="terms" style="font-size:0.9em; line-height:1.2em;"> I acknowledge I have read and agree with the <a href="/privacypolicy"> Privacy Policy and Service Agreement</a>. *
 				        		</label>
 								<div class="radio" style="display:inline;">
-								    <input type="radio" name="terms" id="optionsRadios1" value="yes" checked>
+								    <input required type="radio" name="terms" id="optionsRadios1" value="yes">
 								    Yes
 								</div>
 								<div class="radio" style="display:inline;">
-								    <input type="radio" name="terms" id="optionsRadios2" value="no">
+								    <input required type="radio" name="terms" id="optionsRadios2" value="no">
 								    No
 								</div>
 								<!-- <div style="text-align: right; padding-bottom: 15px;">* Required</div> -->
@@ -219,12 +219,12 @@
 				    	<div class="field-group">
 					        <fieldset>
 					            <label for="name">Basics</label>
-					            <input id="firstname" type="text" name="name" class="form-control-split col-xs-2" placeholder="name" style="width:41%;">
+					            <input id="companyname" required type="text" name="name" class="form-control-split col-xs-2" placeholder="Company Name" style="width:41%;">
 					        </fieldset>
 					        <fieldset>
 					            <!-- <label for="email">What's your email? *</label> -->
-					            <input class="form-control" id="email" type="text" name="website" placeholder="Company Website">
-					            <input class="form-control" id="email" type="text" name="website" placeholder="Describe your Product/Company in a Sentence">
+					            <input class="form-control" required id="website" type="url" name="website" placeholder="Company Website">
+					            <input class="form-control" required id="description" type="text" name="description" placeholder="Describe your Product/Company in a Sentence">
 					        </fieldset>
 				        </div>
 				        <div class="field-group">
@@ -250,10 +250,6 @@
 									</select>
 						        </fieldset>
 					        </fieldset>
-					        <fieldset>
-					            <!-- <label for="resume">Linkedin/Resume? *</label> -->
-					            <input class="form-control" id="resume" type="text" name="resume" placeholder="LinkedIn / Link to Resume">
-					        </fieldset>
 				        </div>
 						<!-- <fieldset>
 				            <label for="blurb">Describe something you are proud of (can be non-technical) *</label>
@@ -262,12 +258,12 @@
 				         -->
 				        <div class="field-group">
 					        <fieldset>
-					            <label for="name">Recruiter Contact</label>
-					            <input id="firstname" type="text" name="firstname" class="form-control-split col-xs-2" placeholder="Firstname" style="width:41%;">
-					            <input id="lastname" type="text" name="lastname" class="form-control-split col-xs-8" placeholder="Lastname" style="width:57.5%;">
+					            <label for="name">Company HR Contact</label>
+					            <input required id="firstname" type="text" name="firstname" class="form-control-split col-xs-2" placeholder="Firstname" style="width:41%;">
+					            <input required id="lastname" type="text" name="lastname" class="form-control-split col-xs-8" placeholder="Lastname" style="width:57.5%;">
 					        </fieldset>
 					        <fieldset>
-					            <input class="form-control" id="email" type="text" name="website" placeholder="Email">
+					            <input required class="form-control" id="email" type="email" name="website" placeholder="Email">
 					        </fieldset>
 				        </div>
 
@@ -456,9 +452,6 @@
 	</nav>
 </footer>
 
-
-
-	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="/public/js/main.js"></script>
 	

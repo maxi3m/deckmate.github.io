@@ -175,8 +175,11 @@ img {
   .hero.privacy p, .hero.privacy h3 {
     text-align: left;
   }
-  .hero.privacy p, .hero.privacy p > * {
+  .hero.privacy p, .hero.privacy p > ul > li {
     color: #4FB2CE;
+  }
+  .hero.privacy p > ul > li {
+    padding-left: 0.5em;
   }
 .hero {
   padding: 380px 0 600px;

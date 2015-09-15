@@ -170,7 +170,7 @@ img {
   .hero.privacy p, .hero.privacy h3 {
     text-align: left;
   }
-  .hero.privacy p {
+  .hero.privacy p, .hero.privacy p > * {
     color: #4FB2CE;
   }
 .hero {

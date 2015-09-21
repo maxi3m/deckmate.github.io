@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
 	// Mobile menu
 	$(".menu-button").click(function() {
 		$(".nav-links").slideToggle(300);
@@ -21,11 +20,6 @@ $(document).ready(function() {
 	$(".recruit.modal-trigger").click(function(event) {
 	    event.preventDefault();
 	    $(".signup.modal#startup").fadeIn(300);
-	});
-	// Hide modal on click
-	$(".signup.modal#startup .modal-bg").click(function(event) {
-		event.preventDefault();
-	    $(".signup.modal#startup").fadeOut(300);
 	});
 
 	//Google forms stuff
@@ -189,7 +183,6 @@ $(document).ready(function() {
 	    $(".learn-more.modal").fadeOut(300);
 	});
 
-
 	// Smooth scrolling to first feature
 	$(".waypoint").on('click',function (event) {
 	    event.preventDefault();
@@ -209,7 +202,7 @@ $(document).ready(function() {
 		event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');
-	    $(".contact-us").removeClass('active');
+	    //$(".contact-us").removeClass('active');
 	    $(this).addClass('active');
 	    $(".step-1").addClass('active');
 	});
@@ -218,7 +211,7 @@ $(document).ready(function() {
 		event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');
-	    $(".contact-us").removeClass('active');
+	    //$(".contact-us").removeClass('active');
 	    $(this).addClass('active');
 	    $(".step-2").addClass('active');
 	});
@@ -227,7 +220,7 @@ $(document).ready(function() {
 		event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');
-	    $(".contact-us").removeClass('active');
+	    //$(".contact-us").removeClass('active');
 	    $(this).addClass('active');
 	    $(".step-3").addClass('active');
 	});
@@ -236,7 +229,7 @@ $(document).ready(function() {
 		event.preventDefault();
 	    $(".trigger").removeClass('active');
 	    $(".step").removeClass('active');
-	    $(".contact-us").removeClass('active');
+	    //$(".contact-us").removeClass('active');
 	    $(this).addClass('active');
 	    $(".step-4").addClass('active');
 	});
@@ -273,28 +266,33 @@ $(document).ready(function() {
 		{
 			$(".step-1").removeClass('active');
 			$(".step-2").addClass('active');
-		}, 3000);
+		}, 2400);
 
 		setTimeout(
 		function() 
 		{
 			$(".step-2").removeClass('active');
 			$(".step-3").addClass('active');
-		}, 6000);
+		}, 4800);
 
 		setTimeout(
 		function() 
 		{
 			$(".step-3").removeClass('active');
 			$(".step-4").addClass('active');
-		}, 9000);
+		}, 7200);
 
 		setTimeout(
 		function() 
 		{
 			$(".step-4").removeClass('active');
 			$(".step-5").addClass('active');
-			$(".contact-us").addClass('active');
+		}, 9600);
+		setTimeout(
+		function() 
+		{
+			$(".step-5").removeClass('active');
+			$(".step-6").addClass('active');
 		}, 12000);
 	 }
 

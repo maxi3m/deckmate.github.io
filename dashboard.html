@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Vanilla Meta Tags -->
+
+	<title>HackerBatch. LevelUp your InternShip</title>
+
+	<meta name="description" content="HackerBatch takes the pain out of finding internships. HackerBatch streamlines the process, automates the matching, eliminates hours applying to jobs and makes sure you get interviewed for the jobs that you want.">
+
+	<meta name="keywords" content="internship, sourcing, recruit, hiring, startups, students">
+
+	<!-- Twitter Card data -->
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@HackerBatchco">
+	<meta name="twitter:title" content="HackerBatch · Find your dream InternShip">
+	<meta name="twitter:description" content="HackerBatch takes the pain out of finding internships. HackerBatch streamlines the process, automates the matching, eliminates hours applying to jobs and makes sure you get interviewed for the jobs that you want.">
+
+	<!-- Twitter Summary Card Image -->
+
+	<!--<meta name="twitter:image" content="http://HackerBatch.com/static/images/HackerBatch_logo_120px.png">-->
+
+	<!-- Schema.org markup for Google+ -->
+
+	<meta itemprop="name" content="HackerBatch · Find your dream InternShip">
+	<meta itemprop="description" content="HackerBatch takes the pain out of finding internships. HackerBatch streamlines the process, automates the matching, eliminates hours applying to jobs and makes sure you get interviewed for the jobs that you want.">
+	<!--<meta itemprop="image" content="http://HackerBatch.com/static/images/HackerBatch-gplus.png">-->
+
+
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="public/css/main.css">
+	<link rel="stylesheet" href="public/css/forms.css">
+	<link rel="stylesheet" href="public/css/dashboard.css">
+
+	
+  <script>
+    // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    // ga('create', 'UA-61967962-1', 'auto');
+    // ga('send', 'pageview');
+  </script>
+
+</head>
+<body>
+
+<!-- Templates -->
+
+    <script type="text/template" id="login-template">
+      <header id="header"></header>
+      <div class="login">
+        <form class="login-form">
+          <h2>Log In</h2>
+          <div class="error" style="display:none"></div>
+          <input type="text" id="login-username" placeholder="Username" />
+          <input type="password" id="login-password" placeholder="Password" />
+          <button>Log In</button>
+        </form>
+      </div>
+    </script>
+
+    <script type="text/template" id="startup-dashboard-template">
+      <div id="user-info">
+        Signed in as <%= Parse.User.current().escape("username") %> (<a href="#" class="log-out">Log out</a>)
+      </div>
+
+      <div class="section">
+
+        <header id="header">
+          <input id="new-todo" placeholder="Your Dashboard" type="text" />
+        </header>
+
+        <div id="main">
+	        <section id="tab1">
+			<h2><a href="#tab1">Dashboard</a></h2>
+			<p>This content appears on tab 1.</p>
+		</section>
+		
+		<section id="tab2">
+			<h2><a href="#tab2">Edit Profile</a></h2>
+			<p>This content appears on tab 2.</p>
+		</section>
+		
+		<section id="tab3">
+			<h2><a href="#tab3">Payment</a></h2>
+			<p>This content appears on tab 3.</p>
+		</section>
+		
+		<section id="tab3">
+			<h2><a href="#tab3">Batch Progress</a></h2>
+			<p>This content appears on tab 3.</p>
+		</section>
+        </div>
+      </div>
+    </script>
+    <meta charset="utf-8">
+    <title>Parse JavaScript Todo App</title>
+    <link href="css/todos.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+    <script src="js/todos.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Dashboard App Interface -->
+
+    <div id="todoapp">
+      <div class="title">
+        <h1>HackeBatch Dashboard</h1>
+      </div>
+
+      <div class="content">
+      </div>
+    </div>
+      
+    <footer>
+        <nav class="footerbar">
+      		<div class="container clearfix">
+      			<i class="logo fa fa-briefcase">HackerBatch</i>
+      			<!--<img class="logo" src="http://HackerBatch.com/static/images/logo-s.png">-->
+      			<p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> HackerBatch.</p>
+      			<p class="contact">
+      				<!--<a href="tel:#">+44 020 3290 6896</a>-->
+      				<a href="mailto:hello@HackerBatch.com">hello@HackerBatch.com</a>
+      			</p>
+      			<p class="social">
+      				<a href="https://twitter.com/HackerBatchco">Twitter</a>
+      			</p>
+      		</div>
+      	</nav>
+    </footer>
+  
+  	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  	<script src="js/underscore.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+  	<script src="/public/js/main.js"></script>
+	
+  </body>
+</html>

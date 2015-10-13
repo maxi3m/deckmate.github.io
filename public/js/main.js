@@ -12,9 +12,9 @@ $(document).ready(function() {
 	});
 	
 	// Hide modal on click
-	$(".signup.modal#student .modal-bg").click(function(event) {
+	$(".signup.modal .modal-bg").click(function(event) {
 	    event.preventDefault();
-	    $(".signup.modal#student").fadeOut(300);
+	    $(".signup.modal").fadeOut(300);
 	});
 	
 	// Display Startup Signup modal on click

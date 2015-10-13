@@ -10,6 +10,7 @@ $(document).ready(function() {
 	    event.preventDefault();
 	    $(".signup.modal#student").fadeIn(300);
 	});
+	
 	// Hide modal on click
 	$(".signup.modal#student .modal-bg").click(function(event) {
 	    event.preventDefault();
@@ -89,8 +90,7 @@ $(document).ready(function() {
 		}
 	};
 	
-	$.fn.serializeObject = function()
-	{
+	$.fn.serializeObject = function(){
 	    var o = {};
 	    var a = this.serializeArray();
 	    $.each(a, function() {
@@ -162,14 +162,9 @@ $(document).ready(function() {
 	};
 	
 	$('#intern_form').submit(function() {
-        postInternFormToGoogle();
-        return false;
-    });
-
-	$('#startup_form').submit(function() {
-        postFormToGoogle('startup');
-        return false;
-    });
+	    postInternFormToGoogle();
+	    return false;
+	});
 
 	// Display modal on click
 	$(".learn-more.modal-trigger").click(function(event) {

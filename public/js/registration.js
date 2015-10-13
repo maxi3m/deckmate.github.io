@@ -4,7 +4,7 @@ $(function() {
  Parse.initialize("QWlOvmgg8hIVbJyA2BDF9558rxDNRyJIk1dHZtIv", "3WAaTWRerKvgl22YTw8eOPK9GHCRTBR4gVvOtGog");
   
   // handler for startup form submission
-  $('#startup_form').on("click", function(event) {
+  $('#startup_form').on("submit", function(event) {
     var $form = $('#startup_form');
 
     // Log the user out in case they're still logged in

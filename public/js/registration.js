@@ -5,7 +5,7 @@ $(function() {
   
   // handler for startup form submission
   
-  $('#startup_form').submit(function(event) {
+  $('#startup_form #send').on("click", function(event) {
     var $form = $('#startup_form');
 
     // Log the user out in case they're still logged in

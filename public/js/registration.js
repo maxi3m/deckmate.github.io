@@ -26,7 +26,8 @@ $(function() {
         var startup = new Startup();
         startup.set("user", user);
   
-        var startupData.company = {
+        var startupData = {};
+        startupData.company = {
           name: data.name,
           url: data.url,
           description: data.description

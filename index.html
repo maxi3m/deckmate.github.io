@@ -37,6 +37,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="public/css/main.css">
 	<link rel="stylesheet" href="public/css/forms.css">
+	<link rel="stylesheet" href="public/css/dashboard.css">
 
 	
 <script>
@@ -64,18 +65,10 @@
           <input type="password" id="login-password" placeholder="Password" />
           <button>Log In</button>
         </form>
-
-        <form class="signup-form">
-          <h2>Sign Up</h2>
-          <div class="error" style="display:none"></div>
-          <input type="text" id="signup-username" placeholder="Username" />
-          <input type="password" id="signup-password" placeholder="Create a Password" />
-          <button>Sign Up</button>
-        </form>
       </div>
     </script>
 
-    <script type="text/template" id="manage-todos-template">
+    <script type="text/template" id="startup-dashboard-template">
       <div id="user-info">
         Signed in as <%= Parse.User.current().escape("username") %> (<a href="#" class="log-out">Log out</a>)
       </div>
@@ -83,49 +76,31 @@
       <div class="section">
 
         <header id="header">
-          <input id="new-todo" placeholder="What needs to be done?" type="text" />
+          <input id="new-todo" placeholder="Your Dashboard" type="text" />
         </header>
 
         <div id="main">
-          <input id="toggle-all" type="checkbox">
-          <label for="toggle-all">Mark all as complete</label>
-          
-          <ul id="todo-list">
-            <img src='images/spinner.gif' class='spinner' />
-          </ul>
+	        <section id="tab1">
+			<h2><a href="#tab1">Dashboard</a></h2>
+			<p>This content appears on tab 1.</p>
+		</section>
+		
+		<section id="tab2">
+			<h2><a href="#tab2">Edit Profile</a></h2>
+			<p>This content appears on tab 2.</p>
+		</section>
+		
+		<section id="tab3">
+			<h2><a href="#tab3">Payment</a></h2>
+			<p>This content appears on tab 3.</p>
+		</section>
+		
+		<section id="tab3">
+			<h2><a href="#tab3">Batch Progress</a></h2>
+			<p>This content appears on tab 3.</p>
+		</section>
         </div>
-
-        <div id="todo-stats"></div>
       </div>
-    </script>
-
-    <script type="text/template" id="item-template">
-      <li class="<%= done ? 'completed' : '' %>">
-	<div class="view">
-	  <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %>>
-	  <label class="todo-content"><%= _.escape(content) %></label>
-	  <button class="todo-destroy"></button>
-	</div>
-	<input class="edit" value="<%= _.escape(content) %>">
-      </li>
-    </script>
-
-    <script type="text/template" id="stats-template">
-      <footer id="footer">
-	<span id="todo-count"><strong><%= remaining %></strong> <%= remaining == 1 ? 'item' : 'items' %> left</span>
-	<ul id="filters">
-	  <li>
-	    <a href="javascript:void(0)" id="all" class="selected">All</a>
-	  </li>
-	  <li>
-	    <a href="javascript:void(0)" id="active">Active</a>
-	  </li>
-	  <li>
-	    <a href="javascript:void(0)" id="completed">Completed</a>
-	  </li>
-	</ul>
-	<button id="clear-completed">Clear completed (<%= done %>)</button>
-      </footer>
     </script>
 
 <!-- Modals -->

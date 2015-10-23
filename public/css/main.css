@@ -731,8 +731,8 @@ img {
   .footer .slider .slider-text .step-title.step-1 {
     display: none; }
 
-  .footer .slider .slider-text .step-title.step-6 {
-    display: block; }
+  /*.footer .slider .slider-text .step-title.step-6 {
+    display: block; }*/
 
   .footer .slider .slider-text .contact-us {
     visibility: visible; }

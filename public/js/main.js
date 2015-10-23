@@ -29,142 +29,142 @@ $(document).ready(function() {
 		return re.test(email);
 	}
 	
-	var postInternFormToGoogle = function(){
-		var firstname = $('#firstname').val();
-		var lastname = $('#lastname').val();
-		var email = $('#email').val();
-		var github = $('#github').val();
-		var resume = $('#resume').val();
-		var roles = $('#roles').val();
-		var blurb = $('#blurb').val();
-		var year = $('#year').val();
-		var terms = $('input[name=terms]:checked', '#intern_form').val()
+	// var postInternFormToGoogle = function(){
+	// 	var firstname = $('#firstname').val();
+	// 	var lastname = $('#lastname').val();
+	// 	var email = $('#email').val();
+	// 	var github = $('#github').val();
+	// 	var resume = $('#resume').val();
+	// 	var roles = $('#roles').val();
+	// 	var blurb = $('#blurb').val();
+	// 	var year = $('#year').val();
+	// 	var terms = $('input[name=terms]:checked', '#intern_form').val()
 		
-		if ((firstname !== "") && (lastname !== "") && (email !== "") && (github !== "") && (resume !== "") && (blurb !== "") && (year !== "") && (terms === "yes") && validateEmail(email) ) {
-		    $.ajax({
-		        url: "https://docs.google.com/forms/a/deckmate.github.io/forms/d1NoC9QFAj_T0OZaR9dQEnddp-xzQ0OGo58627dgnM-y4/formResponse",
-		        data: {
-		        	"entry.735980176" : firstname, 
-		        	"entry.1855865340" : lastname, 
-		        	"entry.568150418" : email,
-		        	"entry.1922611629" : github,
-		        	"entry.670080863" : resume,
-		        	"entry.452937369" : blurb,
-		        	"entry.645095933" : roles,
-		        	"entry.905553991" : year,
+	// 	if ((firstname !== "") && (lastname !== "") && (email !== "") && (github !== "") && (resume !== "") && (blurb !== "") && (year !== "") && (terms === "yes") && validateEmail(email) ) {
+	// 	    $.ajax({
+	// 	        url: "https://docs.google.com/forms/a/deckmate.github.io/forms/d1NoC9QFAj_T0OZaR9dQEnddp-xzQ0OGo58627dgnM-y4/formResponse",
+	// 	        data: {
+	// 	        	"entry.735980176" : firstname, 
+	// 	        	"entry.1855865340" : lastname, 
+	// 	        	"entry.568150418" : email,
+	// 	        	"entry.1922611629" : github,
+	// 	        	"entry.670080863" : resume,
+	// 	        	"entry.452937369" : blurb,
+	// 	        	"entry.645095933" : roles,
+	// 	        	"entry.905553991" : year,
 		        	
-		        },
-		        type: "POST",
-		        dataType: "xml",
-		        statusCode: {
-		            0: function (){
+	// 	        },
+	// 	        type: "POST",
+	// 	        dataType: "xml",
+	// 	        statusCode: {
+	// 	            0: function (){
 		
-		                $('#name').val("");
-		                $('#email').val("");
-		                $('#github').val("");
-		                $('#resume').val("");
-		                $('#roles').val("");
-		                $('#blurb').val("");
-		                $('#year').val("");
-		                //Error message
-		                $(".modal-signup").fadeOut(300);
+	// 	                $('#name').val("");
+	// 	                $('#email').val("");
+	// 	                $('#github').val("");
+	// 	                $('#resume').val("");
+	// 	                $('#roles').val("");
+	// 	                $('#blurb').val("");
+	// 	                $('#year').val("");
+	// 	                //Error message
+	// 	                $(".modal-signup").fadeOut(300);
 		                
-		            },
-		            200: function (){
-		                $('#email').val("");
-		                $('#github').val("");
-		                $('#resume').val("");
-		                $('#roles').val("");
-		                $('#blurb').val("");
-		                $('#year').val("");
-		                //Success Message
+	// 	            },
+	// 	            200: function (){
+	// 	                $('#email').val("");
+	// 	                $('#github').val("");
+	// 	                $('#resume').val("");
+	// 	                $('#roles').val("");
+	// 	                $('#blurb').val("");
+	// 	                $('#year').val("");
+	// 	                //Success Message
 		                
-		                $(".modal-signup").fadeOut(300);
-		            }
-		        }
-		    });
-		}
-		else {
-		    //Error message
-		    console.log("Please make sure you have filled out all required inputs before submitting")
-		}
-	};
+	// 	                $(".modal-signup").fadeOut(300);
+	// 	            }
+	// 	        }
+	// 	    });
+	// 	}
+	// 	else {
+	// 	    //Error message
+	// 	    console.log("Please make sure you have filled out all required inputs before submitting")
+	// 	}
+	// };
 	
-	$.fn.serializeObject = function(){
-	    var o = {};
-	    var a = this.serializeArray();
-	    $.each(a, function() {
-	        if (o[this.name] !== undefined) {
-	            if (!o[this.name].push) {
-	                o[this.name] = [o[this.name]];
-	            }
-	            o[this.name].push(this.value || '');
-	        } else {
-	            o[this.name] = this.value || '';
-	        }
-	    });
-	    return o;
-	};
+	// $.fn.serializeObject = function(){
+	//     var o = {};
+	//     var a = this.serializeArray();
+	//     $.each(a, function() {
+	//         if (o[this.name] !== undefined) {
+	//             if (!o[this.name].push) {
+	//                 o[this.name] = [o[this.name]];
+	//             }
+	//             o[this.name].push(this.value || '');
+	//         } else {
+	//             o[this.name] = this.value || '';
+	//         }
+	//     });
+	//     return o;
+	// };
 		
-	var postFormToGoogle = function(form_type){
-		var form = $("#"+form_type+"_form").serializeObject();
+	// var postFormToGoogle = function(form_type){
+	// 	var form = $("#"+form_type+"_form").serializeObject();
 		
-		console.log(form);
+	// 	console.log(form);
 		
-		// if ((firstname !== "") && (lastname !== "") && (email !== "") && (github !== "") && (resume !== "") && (blurb !== "") && (year !== "") && (terms === "yes") && validateEmail(email) ) {
-		//     $.ajax({
-		//         url: "https://docs.google.com/forms/a/deckmate.github.io/forms/d1NoC9QFAj_T0OZaR9dQEnddp-xzQ0OGo58627dgnM-y4/formResponse",
-		//         data: {
-		//         	"entry.735980176" : firstname, 
-		//         	"entry.1855865340" : lastname, 
-		//         	"entry.568150418" : email,
-		//         	"entry.1922611629" : github,
-		//         	"entry.670080863" : resume,
-		//         	"entry.452937369" : blurb,
-		//         	"entry.645095933" : roles,
-		//         	"entry.905553991" : year,
+	// 	// if ((firstname !== "") && (lastname !== "") && (email !== "") && (github !== "") && (resume !== "") && (blurb !== "") && (year !== "") && (terms === "yes") && validateEmail(email) ) {
+	// 	//     $.ajax({
+	// 	//         url: "https://docs.google.com/forms/a/deckmate.github.io/forms/d1NoC9QFAj_T0OZaR9dQEnddp-xzQ0OGo58627dgnM-y4/formResponse",
+	// 	//         data: {
+	// 	//         	"entry.735980176" : firstname, 
+	// 	//         	"entry.1855865340" : lastname, 
+	// 	//         	"entry.568150418" : email,
+	// 	//         	"entry.1922611629" : github,
+	// 	//         	"entry.670080863" : resume,
+	// 	//         	"entry.452937369" : blurb,
+	// 	//         	"entry.645095933" : roles,
+	// 	//         	"entry.905553991" : year,
 		        	
-		//         },
-		//         type: "POST",
-		//         dataType: "xml",
-		//         statusCode: {
-		//             0: function (){
+	// 	//         },
+	// 	//         type: "POST",
+	// 	//         dataType: "xml",
+	// 	//         statusCode: {
+	// 	//             0: function (){
 		
-		//                 $('#name').val("");
-		//                 $('#email').val("");
-		//                 $('#github').val("");
-		//                 $('#resume').val("");
-		//                 $('#roles').val("");
-		//                 $('#blurb').val("");
-		//                 $('#year').val("");
-		//                 //Error message
-		//                 $(".modal-signup").fadeOut(300);
+	// 	//                 $('#name').val("");
+	// 	//                 $('#email').val("");
+	// 	//                 $('#github').val("");
+	// 	//                 $('#resume').val("");
+	// 	//                 $('#roles').val("");
+	// 	//                 $('#blurb').val("");
+	// 	//                 $('#year').val("");
+	// 	//                 //Error message
+	// 	//                 $(".modal-signup").fadeOut(300);
 		                
-		//             },
-		//             200: function (){
-		//                 $('#email').val("");
-		//                 $('#github').val("");
-		//                 $('#resume').val("");
-		//                 $('#roles').val("");
-		//                 $('#blurb').val("");
-		//                 $('#year').val("");
-		//                 //Success Message
+	// 	//             },
+	// 	//             200: function (){
+	// 	//                 $('#email').val("");
+	// 	//                 $('#github').val("");
+	// 	//                 $('#resume').val("");
+	// 	//                 $('#roles').val("");
+	// 	//                 $('#blurb').val("");
+	// 	//                 $('#year').val("");
+	// 	//                 //Success Message
 		                
-		//                 $(".modal-signup").fadeOut(300);
-		//             }
-		//         }
-		//     });
-		// }
-		// else {
-		//     //Error message
-		//     console.log("Please make sure you have filled out all required inputs before submitting")
-		// }
-	};
+	// 	//                 $(".modal-signup").fadeOut(300);
+	// 	//             }
+	// 	//         }
+	// 	//     });
+	// 	// }
+	// 	// else {
+	// 	//     //Error message
+	// 	//     console.log("Please make sure you have filled out all required inputs before submitting")
+	// 	// }
+	// };
 	
-	$('#intern_form').submit(function() {
-	    postInternFormToGoogle();
-	    return false;
-	});
+	// $('#intern_form').submit(function() {
+	//     postInternFormToGoogle();
+	//     return false;
+	// });
 
 	// Display modal on click
 	$(".learn-more.modal-trigger").click(function(event) {
@@ -247,48 +247,56 @@ $(document).ready(function() {
 
 	// Trigger the slider
 	var eventFired = false,
-	    objectPositionTop = $('.footer').offset().top - 100;
+	    objectPositionTop = $('.footer').offset().top - 100,
+	    stepClasses = [".step-1", ".step-2", ".step-3", ".step-4", ".step-5", ".step-6"],
+	    currClass = stepClasses[0];
 
 	$(window).on('scroll', function() {
 
 	 var currentPosition = $(document).scrollTop();
 	 if (currentPosition > objectPositionTop && eventFired === false) {
-	   eventFired = true;
+	    eventFired = true;
 
-	   // Automatic slider
-		setTimeout(
-		function() 
-		{
-			$(".step-1").removeClass('active');
-			$(".step-2").addClass('active');
-		}, 2400);
+	    // Automatic slider
+	    while(currClass !== stepClasses[6]){
+	    	currClass = $("div.step.active").attr('class').split(' ').reverse()[0];
+	    	nextClass = stepClasses[stepClasses.indexOf(currClass)];
 
-		setTimeout(
-		function() 
-		{
-			$(".step-2").removeClass('active');
-			$(".step-3").addClass('active');
-		}, 4800);
+			setTimeout(
+			function() 
+			{
+				$(currClass).removeClass('active');
+				$(nextClass).addClass('active');
+				currClass = nextClass;
+			}, 2400);
+		}
 
-		setTimeout(
-		function() 
-		{
-			$(".step-3").removeClass('active');
-			$(".step-4").addClass('active');
-		}, 7200);
+		// setTimeout(
+		// function() 
+		// {
+		// 	$(".step-2").removeClass('active');
+		// 	$(".step-3").addClass('active');
+		// }, 4800);
 
-		setTimeout(
-		function() 
-		{
-			$(".step-4").removeClass('active');
-			$(".step-5").addClass('active');
-		}, 9600);
-		setTimeout(
-		function() 
-		{
-			$(".step-5").removeClass('active');
-			$(".step-6").addClass('active');
-		}, 12000);
+		// setTimeout(
+		// function() 
+		// {
+		// 	$(".step-3").removeClass('active');
+		// 	$(".step-4").addClass('active');
+		// }, 7200);
+
+		// setTimeout(
+		// function() 
+		// {
+		// 	$(".step-4").removeClass('active');
+		// 	$(".step-5").addClass('active');
+		// }, 9600);
+		// setTimeout(
+		// function() 
+		// {
+		// 	$(".step-5").removeClass('active');
+		// 	$(".step-6").addClass('active');
+		// }, 12000);
 	 }
 
 	});

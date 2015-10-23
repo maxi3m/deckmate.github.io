@@ -35,9 +35,15 @@
 	<link rel="shortcut icon" href="/images/favicon.ico">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="public/css/main.css">
-	<link rel="stylesheet" href="public/css/forms.css">
-	<link rel="stylesheet" href="public/css/dashboard.css">
+	<link rel="stylesheet" href="/public/css/main.css">
+	<link rel="stylesheet" href="/public/css/forms.css">
+	<link rel="stylesheet" href="/public/css/dashboard.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+	<script src="/public/js/underscore.js"></script>
+	<script src="/public/js/main.js"></script>
+	<script src="/public/js/registration.js"></script>
 
 	
 <script>
@@ -68,462 +74,432 @@
       </div>
     </script>
 
-    <script type="text/template" id="startup-dashboard-template">
-      <div id="user-info">
-        Signed in as <%= Parse.User.current().escape("username") %> (<a href="#" class="log-out">Log out</a>)
-      </div>
-
-      <div class="section">
-
-        <header id="header">
-          <input id="new-todo" placeholder="Your Dashboard" type="text" />
-        </header>
-
-        <div id="main">
-	        <section id="tab1">
-			<h2><a href="#tab1">Dashboard</a></h2>
-			<p>This content appears on tab 1.</p>
-		</section>
-		
-		<section id="tab2">
-			<h2><a href="#tab2">Edit Profile</a></h2>
-			<p>This content appears on tab 2.</p>
-		</section>
-		
-		<section id="tab3">
-			<h2><a href="#tab3">Payment</a></h2>
-			<p>This content appears on tab 3.</p>
-		</section>
-		
-		<section id="tab3">
-			<h2><a href="#tab3">Batch Progress</a></h2>
-			<p>This content appears on tab 3.</p>
-		</section>
-        </div>
-      </div>
+    <script type="text/template" id="dashboard-template">
     </script>
 
-<!-- Modals -->
-<div class="learn-more modal">
-	<div class="modal-bg"></div>
-		<div class="modal-content">
-			<div class="modal-scroll">
-			<h3 class="modal-title">Please enter your email below &amp; we'll reach out to you directly to learn more about your shipping needs.</h3>
-			<!-- Begin MailChimp Signup Form -->
-			<div id="mc_embed_signup">
-			<form action="//HackerBatch.us10.list-manage.com/subscribe/post?u=0ca98d12b827145c7ac279438&amp;id=b45ca1b444" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-			    <div id="mc_embed_signup_scroll">
-			<div class="mc-field-group">
-				<input class="form-control"type="text" value="" name="FNAME" class="required" id="mce-FNAME" placeholder="First Name">
-			</div>
-			<div class="mc-field-group">
-				<input class="form-control"type="text" value="" name="LNAME" class="required" id="mce-LNAME" placeholder="Last Name">
-			</div>
-			<div class="mc-field-group">
-				<input class="form-control"type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
-			</div>
-				<div id="mce-responses" class="clear">
-					<div class="response" id="mce-error-response" style="display:none"></div>
-					<div class="response" id="mce-success-response" style="display:none"></div>
-				</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-			    <div style="position: absolute; left: -5000px;"><input class="form-control"type="text" name="b_0ca98d12b827145c7ac279438_b45ca1b444" tabindex="-1" value=""></div>
-			    <div class="clear"><input class="form-control"type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-			    </div>
-			</form>
-			</div>
-
-			<!--End mc_embed_signup-->
-			<p>In the meantime please <a href="https://twitter.com/HackerBatchco">follow us on Twitter</a>.</p>
-		</div>
-	</div>
-</div>
-
-<div class="signup modal" id="student">
-	<div class="modal-bg"></div>
-		<div class="modal-content">
-			<div class="modal-scroll">
-				<div id="form" class="contact-us-form">
-				    <div class="title">
-				        <h1>
-				        	<strong>
-				        		Create a Hacker Account
-				        	</strong>
-				        </h1>
-				    </div>
-				    <div class="subtitle">
-				        <strong>Please fill this out as accurately as possible</strong>
-				    </div>
-				    <form id="intern_form" target="_self">
-				    	<div class="field-group">
-					        <fieldset>
-					        	<!-- <label for="email">What's your full name? *</label> -->
-					            <label for="firstname">Personal</label>
-					            <input id="firstname" required type="text" name="firstname" class="form-control-split col-xs-2" placeholder="Firstname" style="width:41%;">
-					            <input id="lastname" required type="text" name="lastname" class="form-control-split col-xs-8" placeholder="Lastname" style="width:57.5%;">
-					        </fieldset>
-					        <fieldset>
-					            <!-- <label for="email">What's your email? *</label> -->
-					            <input class="form-control" required id="email" type="email" name="email" placeholder="Email">
-					        </fieldset>
-				        </div>
-				        <div class="field-group">
-					        <fieldset>
-					            <label for="github">Professional</label>
-					            <input class="form-control" id="github" type="text" name="github" placeholder="Github/Bitbucket username">
-					        </fieldset>
-					        <fieldset>
-					            <!-- <label for="resume">Linkedin/Resume? *</label> -->
-					            <input class="form-control" required id="resume" type="url" name="resume" placeholder="LinkedIn / Link to Resume">
-					        </fieldset>
-				        </div>
-				        <div class="fieldgroup">
-				        	<fieldset>
-					            <label for="startdate">Preferred start date</label>
-					            <select required class="form-control" name="startdate" id="roles">
-								<option value="QA">January 2016</option>
-								<option value="Backend">April 2016</option>
-							</select>
-					        </fieldset>
-				        </div>
-				        <div class="fieldgroup">
-				        	<fieldset>
-					            <label for="US_authorized">Are you authorized to work in the US?</label>
-					            <select required class="form-control" name="US_authorized" id="US_authorized">
-												<option value="Yes">Yes</option>
-												<option value="No">No</option>
-											</select>
-					        </fieldset>
-				        </div>
-						<!-- <fieldset>
-				            <label for="blurb">Describe something you are proud of (can be non-technical) *</label>
-				            <textarea class="form-control" rows="3" name="blurb"></textarea>
-				        </fieldset>
-				         -->
-				        <!-- <fieldset>
-				            <label for="blurb">Describe your ideal day at work</label>
-				            <input class="form-control" id="blurb" type="text" name="blurb">
-				        </fieldset> -->
-				        
-				        <div class="field-group">
-					        <fieldset>
-					            <label for="roles">Preferred Role(s) *</label>
-					            <select required class="form-control" name="roles" id="roles" multiple="multiple">
-												<option value="QA">QA/Testing</option>
-												<option value="Backend">Backend Engineer</option>
-												<option value="Fullstack">Fullstack</option>
-												<option value="Mobile">Mobile (iOS/Android/etc)</option>
-												<option value="Frontend">Frontend Engineer</option>
-												<option value="Security">Security Engineer</option>
-											</select>
-					        </fieldset>
-					        
-					        <fieldset>
-					            <label for="year">Current year of University *</label>
-			            		<select required class="form-control" name="year" id="year">
-			            			<option value="Highschool">Highschool</option> 
-									<option value="1st Year">1st Year</option> 
-									<option value="2nd Year">2nd Year</option> 
-									<option value="3rd Year">3rd Year</option> 
-									<option value="4th Year">4th Year</option> 
-									<option value="Masters">Masters</option> 
-									<option value="Phd">Phd</option>
-								</select>
-					        </fieldset>
-				        </div>
-				        
-				        <div class="field-group">
-					        <fieldset>
-				        		<label for="terms" style="font-size:0.9em; line-height:1.2em;"> I acknowledge I have read and agree with the <a href="/privacypolicy"> Privacy Policy and Service Agreement</a>. *
-				        		</label>
-							<div class="radio" style="display:inline;">
-							    <input required type="radio" name="terms" id="optionsRadios1" value="yes">
-							    Yes
-							</div>
-							<div class="radio" style="display:inline;">
-							    <input required type="radio" name="terms" id="optionsRadios2" value="no">
-							    No
-							</div>
-							<!-- <div style="text-align: right; padding-bottom: 15px;">* Required</div> -->
-					        </fieldset>
-				    	</div>    
-
-				   		<div class="field-group">
-					        <fieldset>
-					            <button id="send" type="submit" class="form-control">
-					                Submit
-					            </button>
-					        </fieldset>
-				        </div>
-				        
-				        <div>
-				        	<small>Have questions? Shoot us an email at <a href="mailto:interns@hackerbatch.com">interns@hackerbatch.com</a></small>
-				        </div>
-
-				        <div style="width: 100%; display: block; float: right; padding-top: 15px;">
-				            <div class="requestSubmited" style="display:none; text-align: center;">Your request has been sent!</div>
-				        </div>
-				    </form>
+	<!-- Modals -->
+	<div class="learn-more modal">
+		<div class="modal-bg"></div>
+			<div class="modal-content">
+				<div class="modal-scroll">
+				<h3 class="modal-title">Please enter your email below &amp; we'll reach out to you directly to learn more about your shipping needs.</h3>
+				<!-- Begin MailChimp Signup Form -->
+				<div id="mc_embed_signup">
+				<form action="//HackerBatch.us10.list-manage.com/subscribe/post?u=0ca98d12b827145c7ac279438&amp;id=b45ca1b444" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				    <div id="mc_embed_signup_scroll">
+				<div class="mc-field-group">
+					<input class="form-control"type="text" value="" name="FNAME" class="required" id="mce-FNAME" placeholder="First Name">
 				</div>
+				<div class="mc-field-group">
+					<input class="form-control"type="text" value="" name="LNAME" class="required" id="mce-LNAME" placeholder="Last Name">
+				</div>
+				<div class="mc-field-group">
+					<input class="form-control"type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+				</div>
+					<div id="mce-responses" class="clear">
+						<div class="response" id="mce-error-response" style="display:none"></div>
+						<div class="response" id="mce-success-response" style="display:none"></div>
+					</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				    <div style="position: absolute; left: -5000px;"><input class="form-control"type="text" name="b_0ca98d12b827145c7ac279438_b45ca1b444" tabindex="-1" value=""></div>
+				    <div class="clear"><input class="form-control"type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+				    </div>
+				</form>
+				</div>
+
+				<!--End mc_embed_signup-->
+				<p>In the meantime please <a href="https://twitter.com/HackerBatchco">follow us on Twitter</a>.</p>
 			</div>
 		</div>
 	</div>
-</div>
 
-<div class="signup modal" id="startup">
-	<div class="modal-bg"></div>
-		<div class="modal-content">
-			<div class="modal-scroll">
-				<div id="form" class="contact-us-form">
-				    <div class="title">
-				        <h1>
-				        	<strong>
-				        		Create a Startup Account
-				        	</strong>
-				        </h1>
-				    </div>
-				    <div class="subtitle">
-				        <strong>Please fill this out as accurately as possible</strong>
-				    </div>
-				    <form id="startup_form" target="_self">
-				    	<div class="field-group">
-					        <fieldset>
-					            <label for="companyname">Basics</label>
-					            <input id="companyname" required type="text" name="name" class="form-control" placeholder="Company Name">
-					            <input class="form-control" required id="website" type="url" name="website" placeholder="Company Website">
-					        </fieldset>
-					        <fieldset>
-					             <label for="description">Describe your Product/Company in a Sentence *</label> 
-					            <input class="form-control" required id="description" type="text" name="description">
-					        </fieldset>
-				        </div>
-				        <div class="field-group">
-					        <fieldset>
-					            <fieldset>
-						            <label for="roles">Preferred Candidate Role(s) *</label>
-						            <select class="form-control" name="roles" id="roles" multiple="multiple">
-									<option value="QA">QA/Testing</option>
-									<option value="Backend">Backend Engineer</option>
-									<option value="Fullstack">Fullstack</option>
-									<option value="Mobile">Mobile (iOS/Android/etc)</option>
-									<option value="Frontend">Frontend Engineer</option>
-									<option value="Security">Security Engineer</option>
-								</select>
+	<div class="signup modal" id="student">
+		<div class="modal-bg"></div>
+			<div class="modal-content">
+				<div class="modal-scroll">
+					<div id="form" class="contact-us-form">
+					    <div class="title">
+					        <h1>
+					        	<strong>
+					        		Create a Hacker Account
+					        	</strong>
+					        </h1>
+					    </div>
+					    <div class="subtitle">
+					        <strong>Please fill this out as accurately as possible</strong>
+					    </div>
+					    <form id="intern_form" target="_self">
+					    	<div class="field-group">
+						        <fieldset>
+						        	<!-- <label for="email">What's your full name? *</label> -->
+						            <label for="firstname">Personal</label>
+						            <input id="firstname" required type="text" name="firstname" class="form-control-split col-xs-2" placeholder="Firstname" style="width:41%;">
+						            <input id="lastname" required type="text" name="lastname" class="form-control-split col-xs-8" placeholder="Lastname" style="width:57.5%;">
 						        </fieldset>
 						        <fieldset>
-						            <label for="roles">Preferred Candidate Location(s)</label>
-						            <select class="form-control" name="locations" id="locations" multiple="multiple">
-										<option value="Vancouver">Vancouver</option>
-										<option value="Seattle">Seattle</option>
-										<option value="Remote">Remote</option>
+						            <!-- <label for="email">What's your email? *</label> -->
+						            <input class="form-control" required id="email" type="email" name="email" placeholder="Email">
+						        </fieldset>
+					        </div>
+					        <div class="field-group">
+						        <fieldset>
+						            <label for="github">Professional</label>
+						            <input class="form-control" id="github" type="text" name="github" placeholder="Github/Bitbucket username">
+						        </fieldset>
+						        <fieldset>
+						            <!-- <label for="resume">Linkedin/Resume? *</label> -->
+						            <input class="form-control" required id="resume" type="url" name="resume" placeholder="LinkedIn / Link to Resume">
+						        </fieldset>
+					        </div>
+					        <div class="fieldgroup">
+					        	<fieldset>
+						            <label for="startdate">Preferred start date</label>
+						            <select required class="form-control" name="startdate" id="roles">
+									<option value="QA">January 2016</option>
+									<option value="Backend">April 2016</option>
+								</select>
+						        </fieldset>
+					        </div>
+					        <div class="fieldgroup">
+					        	<fieldset>
+						            <label for="US_authorized">Are you authorized to work in the US?</label>
+						            <select required class="form-control" name="US_authorized" id="US_authorized">
+													<option value="Yes">Yes</option>
+													<option value="No">No</option>
+												</select>
+						        </fieldset>
+					        </div>
+							<!-- <fieldset>
+					            <label for="blurb">Describe something you are proud of (can be non-technical) *</label>
+					            <textarea class="form-control" rows="3" name="blurb"></textarea>
+					        </fieldset>
+					         -->
+					        <!-- <fieldset>
+					            <label for="blurb">Describe your ideal day at work</label>
+					            <input class="form-control" id="blurb" type="text" name="blurb">
+					        </fieldset> -->
+					        
+					        <div class="field-group">
+						        <fieldset>
+						            <label for="roles">Preferred Role(s) *</label>
+						            <select required class="form-control" name="roles" id="roles" multiple="multiple">
+													<option value="QA">QA/Testing</option>
+													<option value="Backend">Backend Engineer</option>
+													<option value="Fullstack">Fullstack</option>
+													<option value="Mobile">Mobile (iOS/Android/etc)</option>
+													<option value="Frontend">Frontend Engineer</option>
+													<option value="Security">Security Engineer</option>
+												</select>
+						        </fieldset>
+						        
+						        <fieldset>
+						            <label for="year">Current year of University *</label>
+				            		<select required class="form-control" name="year" id="year">
+				            			<option value="Highschool">Highschool</option> 
+										<option value="1st Year">1st Year</option> 
+										<option value="2nd Year">2nd Year</option> 
+										<option value="3rd Year">3rd Year</option> 
+										<option value="4th Year">4th Year</option> 
+										<option value="Masters">Masters</option> 
+										<option value="Phd">Phd</option>
 									</select>
 						        </fieldset>
-					        </fieldset>
-				        </div>
+					        </div>
+					        
+					        <div class="field-group">
+						        <fieldset>
+					        		<label for="terms" style="font-size:0.9em; line-height:1.2em;"> I acknowledge I have read and agree with the <a href="/privacypolicy"> Privacy Policy and Service Agreement</a>. *
+					        		</label>
+								<div class="radio" style="display:inline;">
+								    <input required type="radio" name="terms" id="optionsRadios1" value="yes">
+								    Yes
+								</div>
+								<div class="radio" style="display:inline;">
+								    <input required type="radio" name="terms" id="optionsRadios2" value="no">
+								    No
+								</div>
+								<!-- <div style="text-align: right; padding-bottom: 15px;">* Required</div> -->
+						        </fieldset>
+					    	</div>    
 
-				        <div class="field-group">
-					        <fieldset>
-					            <label for="name">Hiring Manager Contact</label>
-					            <input required id="firstname" type="text" name="firstname" class="form-control-split col-xs-2" placeholder="Firstname" style="width:41%;">
-					            <input required id="lastname" type="text" name="lastname" class="form-control-split col-xs-8" placeholder="Lastname" style="width:57.5%;">
-					        </fieldset>
-					        <fieldset>
-					            <input required class="form-control" id="email" type="email" name="website" placeholder="Email">
-					        </fieldset>
-				        </div>
+					   		<div class="field-group">
+						        <fieldset>
+						            <button id="send" type="submit" class="form-control">
+						                Submit
+						            </button>
+						        </fieldset>
+					        </div>
+					        
+					        <div>
+					        	<small>Have questions? Shoot us an email at <a href="mailto:interns@hackerbatch.com">interns@hackerbatch.com</a></small>
+					        </div>
 
-				   		<div class="field-group">
-					        <fieldset>
-					            <button id="send" class="form-control">
-					                Submit
-					            </button>
-					        </fieldset>
-				        </div>
-				        
-				        <div>
-				        	<small>Have questions? Shoot us an email at <a href="mailto:startups@hackerbatch.com">startups@hackerbatch.com</a></small>
-				        </div>
-
-				        <div style="width: 100%; display: block; float: right; padding-top: 15px;">
-				            <div class="requestSubmited" style="display:none; text-align: center;">Your request has been sent!</div>
-				        </div>
-				    </form>
+					        <div style="width: 100%; display: block; float: right; padding-top: 15px;">
+					            <div class="requestSubmited" style="display:none; text-align: center;">Your request has been sent!</div>
+					        </div>
+					    </form>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
-<nav class="navbar">
-	<a class="menu-button" href="javascript:void(0)">☰ Menu</a>
-	<h1 class="logo">
-		<a style="color: rgb(255, 255, 255); text-decoration: none; font-weight: 700; font-size: 1.9em;" href="/"> 
-			<!--<img src="/public/img/logo.png">-->
-			<i style="font-size: 1.3em;" class="fa fa-briefcase">HackerBatch</i>
-		</a>
-	</h1>
-	
-	<ul class="nav-links">
-		<li><a class="waypoint" href="#why-us">Why us?</a></li>
-		<li><a class="waypoint" href="#interns">Interns</a></li>
-		<li><a class="waypoint" href="#carriers">Startups</a></li>
-		<li><a class="waypoint" href="#works">How it Works</a></li>
-		<!-- <li><a href="#">FAQ</a></li> -->
-		<li><a class="modal-signup-trigger" href="#">Contact</a></li>
-	</ul>
-	<!-- <ul class="nav-account">
-		<li><a class="sign-up" href="#">Sign up</a></li>
-		<li><a href="#">Sign in</a></li>
-	</ul> -->
-</nav>
+	<div class="signup modal" id="startup">
+		<div class="modal-bg"></div>
+			<div class="modal-content">
+				<div class="modal-scroll">
+					<div id="form" class="contact-us-form">
+					    <div class="title">
+					        <h1>
+					        	<strong>
+					        		Create a Startup Account
+					        	</strong>
+					        </h1>
+					    </div>
+					    <div class="subtitle">
+					        <strong>Please fill this out as accurately as possible</strong>
+					    </div>
+					    <form id="startup_form" target="_self">
+					    	<div class="field-group">
+						        <fieldset>
+						            <label for="companyname">Basics</label>
+						            <input id="companyname" required type="text" name="name" class="form-control" placeholder="Company Name">
+						            <input class="form-control" required id="website" type="url" name="website" placeholder="Company Website">
+						        </fieldset>
+						        <fieldset>
+						             <label for="description">Describe your Product/Company in a Sentence *</label> 
+						            <input class="form-control" required id="description" type="text" name="description">
+						        </fieldset>
+					        </div>
+					        <div class="field-group">
+						        <fieldset>
+						            <fieldset>
+							            <label for="roles">Preferred Candidate Role(s) *</label>
+							            <select class="form-control" name="roles" id="roles" multiple="multiple">
+										<option value="QA">QA/Testing</option>
+										<option value="Backend">Backend Engineer</option>
+										<option value="Fullstack">Fullstack</option>
+										<option value="Mobile">Mobile (iOS/Android/etc)</option>
+										<option value="Frontend">Frontend Engineer</option>
+										<option value="Security">Security Engineer</option>
+									</select>
+							        </fieldset>
+							        <fieldset>
+							            <label for="roles">Preferred Candidate Location(s)</label>
+							            <select class="form-control" name="locations" id="locations" multiple="multiple">
+											<option value="Vancouver">Vancouver</option>
+											<option value="Seattle">Seattle</option>
+											<option value="Remote">Remote</option>
+										</select>
+							        </fieldset>
+						        </fieldset>
+					        </div>
 
-<header class="hero">
-	<div class="container-fluid">
-		<h2>Level<i class="fa fa-arrow-up"></i> your Internship</h2>
-		<h3>Get trained. Get hired (by awesome startups)</h3>
-		
-		<div class="container row">
-			<div class="col-12">
-				<a class="signup modal-trigger" href="">Join the Beta</a></a>
-			</div>
-		</div>
-		<div>
-			<div class="col-6">
-				<a class="recruit modal-trigger" href="#">Looking to hire interns?</a>
-			</div>
-		</div>
-		
-		<a class="go-down waypoint" href="#interns"><img src="//cdn2.hubspot.net/hubfs/536958/Images/arrow.png?t=1442315366969"></a>
-	</div>
-</header>
+					        <div class="field-group">
+						        <fieldset>
+						            <label for="name">Hiring Manager Contact</label>
+						            <input required id="firstname" type="text" name="firstname" class="form-control-split col-xs-2" placeholder="Firstname" style="width:41%;">
+						            <input required id="lastname" type="text" name="lastname" class="form-control-split col-xs-8" placeholder="Lastname" style="width:57.5%;">
+						        </fieldset>
+						        <fieldset>
+						            <input required class="form-control" id="email" type="email" name="email" placeholder="Email">
+						        </fieldset>
+					        </div>
 
-<section class="feature-1" id="interns">
-	<div class="container clearfix">
-		<span class="feature-mark">Interns</span>
-		<!--<img class="feature-image" src="https://photos-1.dropbox.com/t/2/AAAmfHbHW6_BYkFyg_51DQ97KOOCqr40HolkEteVedM38A/12/278809193/jpeg/32x32/1/_/1/2/IMG_9667.JPG">-->
-		<div class="feature-info">
-			<h3 class="feature-title">Get interviews at top startups &amp; <br class="hide-sm">  get access to awesome techincal training and mentors.</h3>
-			<ul class="feature-list">
-				<!--<li>We do the networking and outreach to top startups around N/A <br class="hide-sm"> so you don't have to</li>-->
-				<li>Get access to workshops taught by some of the <br class="hide-sm">best hackers.</li>
-				<li>Apply once and get in front of 20+ top startups. Never write <br class="hide-sm">a CV again.</li>
-				<li>Efficient and personalized matching process so you only interview with the jobs you want</li>
-				<li>No cost (as in beer) for interns once accepted into batch.</li>
+					   		<div class="field-group">
+						        <fieldset>
+						            <button id="send" class="form-control">
+						                Submit
+						            </button>
+						        </fieldset>
+					        </div>
+					        
+					        <div>
+					        	<small>Have questions? Shoot us an email at <a href="mailto:startups@hackerbatch.com">startups@hackerbatch.com</a></small>
+					        </div>
 
-			</ul>
-		</div>
-	</div>
-</section>
-
-<section class="feature-2" id="carriers">
-	<div class="container clearfix">
-		<span class="feature-mark">Startups</span>
-		<!--<img class="feature-image" src="https://photos-2.dropbox.com/t/2/AAA3Cq4L0nabb3oRsqJFiaqE5rneL4vm71MZTE3f1q7UDQ/12/278809193/jpeg/32x32/1/_/1/2/IMG_9641.JPG/COmU-YQBIAEgAiADIAQgBSAGIAcoASgC/VR7pBlDNpRg_960bNINr_xevgFqBzzTJP__dOtsndcw?size=800x600&size_mode=2">-->
-		<div class="feature-info">
-			<h3 class="feature-title">The most efficient way to <br class="hide-sm">hire up and coming hackers.</h3>
-			<ul class="feature-list">
-				<li>Access to a consistent recruitment pipeline from our batches of top hackers.</li>
-				<li>Costs less than half of any competitor</li>
-				<li>Get matched and pre-screened interns at your door. <br class="hide-sm">  No more sifting through 100s of applicants.</li>
-				<li>No middlemen. Communicate directly with applicants from day one.</li>
-			</ul>
-		</div>
-	</div>
-</section>
-
-<section class="why" id="why-us">
-	<div class="container">
-		<!--<img class="anchor" src="http://HackerBatch.com/static/images/anchor.png">-->
-		<h3>Why HackerBatch?</h3>
-		<div class="features clearfix">
-			<div class="feature">
-				<span class="number">01</span>
-				<h4>High Standards</h4>
-				<p>Instantly get matched with top hackers and companies that are pre-screened and interviewed. We don't just let anyone join our hiring pool.</p>
-			</div>
-			<div class="feature">
-				<span class="number">02</span>
-				<h4>No Recruiting Agencies</h4>
-				<p>HackerBatch isn't a recruiting agency. Unlike recruiters we curate your application into 'batches' for hiring season and job type and send them out to companies. After that it is up to the startup/company to reach out if they see a good fit.</p>
-			</div>
-			<div class="feature">
-				<span class="number">03</span>
-				<h4>Easy to Use</h4>
-				<p>HackerBatch applying to internships as easy as buying ticket to your favourite concert.</p>
-			</div>
-			<div class="feature">
-				<span class="number">04</span>
-				<h4>Direct Contact</h4>
-				<p>HackerBatch directly connects interns &amp; startups through our simple, powerful &amp; elegant matching platform.</p>
-			</div>
-		</div>
-		<!--<div>-->
-		<!--	<a class="learn-more modal-trigger" href="#">Learn more</a>-->
-		<!--</div>-->
-	</div>
-</section>
-
-<footer class="footer" id="works">
-
-	<div class="slider">
-		<h3>How it Works (Our Process)</h3>
-		<div class="slider-text">
-			<div class="container-l">
-				<div class="text-1">
-					<span class="step step-count step-1 active">Step 1</span>
-					<span class="step step-count step-2">Step 2</span>
-					<span class="step step-count step-3">Step 3</span>
-					<span class="step step-count step-4">Step 4</span>
-					<span class="step step-count step-5">Step 5</span>
-					<span class="step step-count step-6">Step 6</span>
-					<h3 class="step step-title step-1 active">Hacker applies online at HackerBatch.</h3>
-					<h3 class="step step-title step-2">Hacker is sent and passes skill testing questions. </h3>
-					<h3 class="step step-title step-3">Hacker passes human and automated screening. </h3> 
-					<h3 class="step step-title step-4">Hacker placed into 'batch' (selected by experience, start date, etc) and is given access to resources (i.e. interview workshops/tech talks)</h3>
-					<h3 class="step step-title step-5">'Batch' of hackers is sent out to Company at the end of the month</h3>
-					<h3 class="step step-title step-6">Company reaches out to Hacker and offers interview.</h3>
+					        <div style="width: 100%; display: block; float: right; padding-top: 15px;">
+					            <div class="requestSubmited" style="display:none; text-align: center;">Your request has been sent!</div>
+					        </div>
+					    </form>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="timeline">
-			<div class="container">
-				<div class="step step-1 active"></div>
-				<div class="step step-2"></div>
-				<div class="step step-3"></div>
-				<div class="step step-4"></div>
-				<div class="step step-5"></div>
-				<div class="step step-6"></div>
-			</div>
-		</div>
-		<div class="timeline-steps">
-			<div class="container">
-				<a class="trigger step-1 trigger-1 active" href="#">1</a>
-				<a class="trigger step-2 trigger-2" href="#">2</a>
-				<a class="trigger step-3 trigger-3" href="#">3</a>
-				<a class="trigger step-4 trigger-4" href="#">4</a>
-				<a class="trigger step-5 trigger-5" href="#">5</a>
-				<a class="trigger step-6 trigger-6" href="#">6</a>
-			</div>
-		</div>
 	</div>
 
-	<nav class="footerbar">
-		<div class="container clearfix">
-			<i class="logo fa fa-briefcase">HackerBatch</i>
-			<!--<img class="logo" src="http://HackerBatch.com/static/images/logo-s.png">-->
-			<p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> HackerBatch.</p>
-			<p class="contact">
-				<!--<a href="tel:#">+44 020 3290 6896</a>-->
-				<a href="mailto:hello@HackerBatch.com">hello@HackerBatch.com</a>
-			</p>
-			<p class="social">
-				<a href="https://twitter.com/HackerBatchco">Twitter</a>
-			</p>
-		</div>
+	<nav class="navbar">
+		<a class="menu-button" href="javascript:void(0)">☰ Menu</a>
+		<h1 class="logo">
+			<a style="color: rgb(255, 255, 255); text-decoration: none; font-weight: 700; font-size: 1.9em;" href="/"> 
+				<!--<img src="/public/img/logo.png">-->
+				<i style="font-size: 1.3em;" class="fa fa-briefcase">HackerBatch</i>
+			</a>
+		</h1>
+		
+		<ul class="nav-links">
+			<li><a class="waypoint" href="#why-us">Why us?</a></li>
+			<li><a class="waypoint" href="#interns">Interns</a></li>
+			<li><a class="waypoint" href="#carriers">Startups</a></li>
+			<li><a class="waypoint" href="#works">How it Works</a></li>
+			<!-- <li><a href="#">FAQ</a></li> -->
+			<li><a class="modal-signup-trigger" href="#">Contact</a></li>
+		</ul>
+		<!-- <ul class="nav-account">
+			<li><a class="sign-up" href="#">Sign up</a></li>
+			<li><a href="#">Sign in</a></li>
+		</ul> -->
 	</nav>
-</footer>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="/public/js/main.js"></script>
-	<script src="/public/js/registration.js"></script>
+	<div id="dashboardApp">
+		<div class="content">	
+			<header class="hero">
+				<div class="container-fluid">
+					<h2>Level<i class="fa fa-arrow-up"></i> your Internship</h2>
+					<h3>Get trained. Get hired (by awesome startups)</h3>
+					
+					<div class="container row">
+						<div class="col-12">
+							<a class="signup modal-trigger" href="">Join the Beta</a></a>
+						</div>
+					</div>
+					<div>
+						<div class="col-6">
+							<a class="recruit modal-trigger" href="#">Looking to hire interns?</a>
+						</div>
+					</div>
+					
+					<a class="go-down waypoint" href="#interns"><img src="//cdn2.hubspot.net/hubfs/536958/Images/arrow.png?t=1442315366969"></a>
+				</div>
+			</header>
+
+			<section class="feature-1" id="interns">
+				<div class="container clearfix">
+					<span class="feature-mark">Interns</span>
+					<!--<img class="feature-image" src="https://photos-1.dropbox.com/t/2/AAAmfHbHW6_BYkFyg_51DQ97KOOCqr40HolkEteVedM38A/12/278809193/jpeg/32x32/1/_/1/2/IMG_9667.JPG">-->
+					<div class="feature-info">
+						<h3 class="feature-title">Get interviews at top startups &amp; <br class="hide-sm">  get access to awesome techincal training and mentors.</h3>
+						<ul class="feature-list">
+							<!--<li>We do the networking and outreach to top startups around N/A <br class="hide-sm"> so you don't have to</li>-->
+							<li>Get access to workshops taught by some of the <br class="hide-sm">best hackers.</li>
+							<li>Apply once and get in front of 20+ top startups. Never write <br class="hide-sm">a CV again.</li>
+							<li>Efficient and personalized matching process so you only interview with the jobs you want</li>
+							<li>No cost (as in beer) for interns once accepted into batch.</li>
+
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="feature-2" id="carriers">
+				<div class="container clearfix">
+					<span class="feature-mark">Startups</span>
+					<!--<img class="feature-image" src="https://photos-2.dropbox.com/t/2/AAA3Cq4L0nabb3oRsqJFiaqE5rneL4vm71MZTE3f1q7UDQ/12/278809193/jpeg/32x32/1/_/1/2/IMG_9641.JPG/COmU-YQBIAEgAiADIAQgBSAGIAcoASgC/VR7pBlDNpRg_960bNINr_xevgFqBzzTJP__dOtsndcw?size=800x600&size_mode=2">-->
+					<div class="feature-info">
+						<h3 class="feature-title">The most efficient way to <br class="hide-sm">hire up and coming hackers.</h3>
+						<ul class="feature-list">
+							<li>Access to a consistent recruitment pipeline from our batches of top hackers.</li>
+							<li>Costs less than half of any competitor</li>
+							<li>Get matched and pre-screened interns at your door. <br class="hide-sm">  No more sifting through 100s of applicants.</li>
+							<li>No middlemen. Communicate directly with applicants from day one.</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="why" id="why-us">
+				<div class="container">
+					<!--<img class="anchor" src="http://HackerBatch.com/static/images/anchor.png">-->
+					<h3>Why HackerBatch?</h3>
+					<div class="features clearfix">
+						<div class="feature">
+							<span class="number">01</span>
+							<h4>High Standards</h4>
+							<p>Instantly get matched with top hackers and companies that are pre-screened and interviewed. We don't just let anyone join our hiring pool.</p>
+						</div>
+						<div class="feature">
+							<span class="number">02</span>
+							<h4>No Recruiting Agencies</h4>
+							<p>HackerBatch isn't a recruiting agency. Unlike recruiters we curate your application into 'batches' for hiring season and job type and send them out to companies. After that it is up to the startup/company to reach out if they see a good fit.</p>
+						</div>
+						<div class="feature">
+							<span class="number">03</span>
+							<h4>Easy to Use</h4>
+							<p>HackerBatch applying to internships as easy as buying ticket to your favourite concert.</p>
+						</div>
+						<div class="feature">
+							<span class="number">04</span>
+							<h4>Direct Contact</h4>
+							<p>HackerBatch directly connects interns &amp; startups through our simple, powerful &amp; elegant matching platform.</p>
+						</div>
+					</div>
+					<!--<div>-->
+					<!--	<a class="learn-more modal-trigger" href="#">Learn more</a>-->
+					<!--</div>-->
+				</div>
+			</section>
+
+			<footer class="footer" id="works">
+
+				<div class="slider">
+					<h3>How it Works (Our Process)</h3>
+					<div class="slider-text">
+						<div class="container-l">
+							<div class="text-1">
+								<span class="step step-count step-1 active">Step 1</span>
+								<span class="step step-count step-2">Step 2</span>
+								<span class="step step-count step-3">Step 3</span>
+								<span class="step step-count step-4">Step 4</span>
+								<span class="step step-count step-5">Step 5</span>
+								<span class="step step-count step-6">Step 6</span>
+								<h3 class="step step-title step-1 active">Hacker applies online at HackerBatch.</h3>
+								<h3 class="step step-title step-2">Hacker is sent and passes skill testing questions. </h3>
+								<h3 class="step step-title step-3">Hacker passes human and automated screening. </h3> 
+								<h3 class="step step-title step-4">Hacker placed into 'batch' (selected by experience, start date, etc) and is given access to resources (i.e. interview workshops/tech talks)</h3>
+								<h3 class="step step-title step-5">'Batch' of hackers is sent out to Company at the end of the month</h3>
+								<h3 class="step step-title step-6">Company reaches out to Hacker and offers interview.</h3>
+							</div>
+						</div>
+					</div>
+					<div class="timeline">
+						<div class="container">
+							<div class="step step-1 active"></div>
+							<div class="step step-2"></div>
+							<div class="step step-3"></div>
+							<div class="step step-4"></div>
+							<div class="step step-5"></div>
+							<div class="step step-6"></div>
+						</div>
+					</div>
+					<div class="timeline-steps">
+						<div class="container">
+							<a class="trigger step-1 trigger-1 active" href="#">1</a>
+							<a class="trigger step-2 trigger-2" href="#">2</a>
+							<a class="trigger step-3 trigger-3" href="#">3</a>
+							<a class="trigger step-4 trigger-4" href="#">4</a>
+							<a class="trigger step-5 trigger-5" href="#">5</a>
+							<a class="trigger step-6 trigger-6" href="#">6</a>
+						</div>
+					</div>
+				</div>
+
+				<nav class="footerbar">
+					<div class="container clearfix">
+						<i class="logo fa fa-briefcase">HackerBatch</i>
+						<!--<img class="logo" src="http://HackerBatch.com/static/images/logo-s.png">-->
+						<p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> HackerBatch.</p>
+						<p class="contact">
+							<!--<a href="tel:#">+44 020 3290 6896</a>-->
+							<a href="mailto:hello@HackerBatch.com">hello@HackerBatch.com</a>
+						</p>
+						<p class="social">
+							<a href="https://twitter.com/HackerBatchco">Twitter</a>
+						</p>
+					</div>
+				</nav>
+			</footer>
+		</div>
+	</div>
+
+
 </body>
 </html>

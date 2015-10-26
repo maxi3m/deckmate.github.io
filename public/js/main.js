@@ -248,8 +248,9 @@ $(document).ready(function() {
 	// Trigger the slider
 	var eventFired = false,
 	    objectPositionTop = $('.footer').offset().top - 100,
-	    stepClasses = [".step-1", ".step-2", ".step-3", ".step-4", ".step-5", ".step-6"],
-	    currClass = stepClasses[0];
+	    stepClasses = ["step-1", "step-2", "step-3", "step-4", "step-5", "step-6"],
+	    currClass = stepClasses[0],
+	    nextClass;
 
 	$(window).on('scroll', function() {
 
@@ -257,46 +258,25 @@ $(document).ready(function() {
 	 if (currentPosition > objectPositionTop && eventFired === false) {
 	    eventFired = true;
 
+
+		$(".step-1").addClass('active');
+
 	    // Automatic slider
-	    while(currClass !== stepClasses[6]){
-	    	currClass = $("div.step.active").attr('class').split(' ').reverse()[0];
-	    	nextClass = stepClasses[stepClasses.indexOf(currClass)];
+	    (function getNextClass(){
 
-			setTimeout(
-			function() 
-			{
-				$(currClass).removeClass('active');
-				$(nextClass).addClass('active');
-				currClass = nextClass;
-			}, 2400);
-		}
+			setTimeout(function(){
+				if(currClass !== stepClasses[5]){
+					currClass = $("div.step.active").attr('class').split(' ').reverse()[1];
+	    			nextClass = stepClasses[stepClasses.indexOf(currClass)+1];
 
-		// setTimeout(
-		// function() 
-		// {
-		// 	$(".step-2").removeClass('active');
-		// 	$(".step-3").addClass('active');
-		// }, 4800);
+					$("."+currClass).removeClass('active');
+					$("."+nextClass).addClass('active');
+					currClass = nextClass;
 
-		// setTimeout(
-		// function() 
-		// {
-		// 	$(".step-3").removeClass('active');
-		// 	$(".step-4").addClass('active');
-		// }, 7200);
-
-		// setTimeout(
-		// function() 
-		// {
-		// 	$(".step-4").removeClass('active');
-		// 	$(".step-5").addClass('active');
-		// }, 9600);
-		// setTimeout(
-		// function() 
-		// {
-		// 	$(".step-5").removeClass('active');
-		// 	$(".step-6").addClass('active');
-		// }, 12000);
+					getNextClass();
+				}
+			}, 2000);
+		})();
 	 }
 
 	});

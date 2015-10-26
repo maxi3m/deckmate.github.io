@@ -1,10 +1,9 @@
 // On page load...
 $(function() {
  
- Parse.initialize("QWlOvmgg8hIVbJyA2BDF9558rxDNRyJIk1dHZtIv", "3WAaTWRerKvgl22YTw8eOPK9GHCRTBR4gVvOtGog");
+  Parse.initialize("QWlOvmgg8hIVbJyA2BDF9558rxDNRyJIk1dHZtIv", "3WAaTWRerKvgl22YTw8eOPK9GHCRTBR4gVvOtGog");
   
   // handler for startup form submission
-  
   $('#startup_form #send').on("click", function(event) {
     var $form = $('#startup_form');
 

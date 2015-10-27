@@ -257,6 +257,7 @@ img {
     left: -140px;
     top: -150px; }
   .feature-1 .feature-info {
+    /*text-align: right;*/
     padding-top: 75px;
     float: right; }
 

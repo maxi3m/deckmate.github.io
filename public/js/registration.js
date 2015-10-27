@@ -20,17 +20,17 @@ $(function() {
     user.signUp(null, {
       success: function(user) {
         
-        $(".signup.modal").fadeOut(300);
-        
         var startup = new Startup();
         startup.set("user", user);
   
         var startupData = {};
         startupData.company = {
           name: data.name,
-          url: data.url,
+          website: data.website,
           description: data.description
         };
+
+        console.log(data)
         
         startupData.candidates = {
           roles: data.roles,
@@ -40,11 +40,18 @@ $(function() {
         startup.save(startupData, {
           success: function(startup){
             console.log('startup successfully saved');
+            $(".signup.modal").modal(100);
           },
           error: function(startup, error){
             console.log('Startup could not be saved. Error: ')
             console.log(error);
+            // $modal = $('.signup.modal');
+            // $modal.find('.modal-title').text('Submission Error');
+            // $modal.find('.modal-body p').text(error.message);
+            // $modal.modal('show');
+            window.alert("There was an error with your application: " + error.message);
           }
+
         });
 
       },
@@ -55,7 +62,7 @@ $(function() {
         console.log('Submission Error: ')
         console.log(error);
         // $modal.modal('show');
-        // window.alert("There was an error with your application: " + error.message);
+        window.alert("There was an error with your application: " + error.message);
       }
     });
     event.preventDefault();
@@ -77,34 +84,34 @@ $(function() {
     // console.log(user);
     user.signUp(null, {
       success: function(user) {
-        
-        $(".signup.modal").fadeOut(300);
-        
+          
         var hacker = new Hacker();
         hacker.set("user", user);
   
         var hackerData = {};
         hackerData.professional = {
-          linkedin: data.linkedin,
+          resume: data.resume,
           github: data.github,
-          blurb: data.blurb,
           university: data.year,
+          US_work_auth: false
         };
         
         if(US_authorized === "Yes") hackerData.professional.US_work_auth = true;
 
         hackerData.batchInfo = {
           roles: data.roles,
-          locations: data.locations,
+          startDate: data.startdate
         };
 
         hacker.save(hackerData, {
           success: function(hacker){
             console.log('hacker successfully saved');
+            $(".signup.modal").fadeOut(100);
           },
           error: function(hacker, error){
             console.log('Hacker could not be saved. Error: ')
             console.log(error);
+            window.alert("There was an error with your application: " + error.message);
           }
         });
 
@@ -129,9 +136,9 @@ $(function() {
     defaults: {
       company: {
         name: "",
-        url: "",
+        website: "",
         description: "",
-        size: "",
+        size: 0,
       },
       candidates:{
         roles: [],

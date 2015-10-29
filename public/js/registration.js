@@ -93,6 +93,7 @@ $(function() {
           resume: data.resume,
           github: data.github,
           university: data.year,
+          jobType: data.jobType,
           US_work_auth: false
         };
         
